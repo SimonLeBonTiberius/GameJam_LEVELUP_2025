@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
+[ext_resource path="res://characters/graham/graham.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://rooms/pub/pub_bg.png" type="Texture" id=5]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
+[ext_resource path="res://rooms/pub/barrels_fg.png" type="Texture" id=8]
+[ext_resource path="res://items/beer.tscn" type="PackedScene" id=9]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 1530, 734, 1611, 735, 1639, 886, 1487, 862, 2883, 762, 2989, 720, 3223, 739, 3274, 954, 2723, 847, 734, 952, 894, 894, 1050, 937, 1974, 941, 1370, 917, 1211, 885, 2285, 920, 1817, 888 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11 ), PoolIntArray( 7, 9, 11, 12 ), PoolIntArray( 13, 3, 2, 12 ), PoolIntArray( 11, 14, 13 ), PoolIntArray( 15, 8, 7 ), PoolIntArray( 2, 16, 12 ), PoolIntArray( 11, 13, 12 ), PoolIntArray( 7, 12, 15 ) ]
+outlines = [ PoolVector2Array( 734, 952, 894, 894, 1050, 937, 1211, 885, 1370, 917, 1487, 862, 1530, 734, 1611, 735, 1639, 886, 1817, 888, 1974, 941, 2285, 920, 2723, 847, 2883, 762, 2989, 720, 3223, 739, 3274, 954 ) ]
+
+[node name="ESCRoom" type="Node2D"]
+script = ExtResource( 1 )
+global_id = "pub"
+esc_script = "res://rooms/pub/room_pub.esc"
+player_scene = ExtResource( 2 )
+camera_limits = [ Rect2( 0, 0, 3975, 956 ) ]
+
+[node name="ESCBackground" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+script = ExtResource( 3 )
+
+[node name="ESCTerrain" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+scale_min = 2.0
+scale_max = 2.0
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="ESCTerrain"]
+navpoly = SubResource( 1 )
+
+[node name="start" type="Position2D" parent="."]
+position = Vector2( 3032, 798 )
+script = ExtResource( 6 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+global_id = "start"
+is_start_location = true
+
+[node name="Blackboard" type="Area2D" parent="."]
+pause_mode = 1
+script = ExtResource( 7 )
+global_id = "blackboard"
+esc_script = "res://rooms/pub/blackboard.esc"
+tooltip_name = "blackboard"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blackboard"]
+position = Vector2( 3.99988, 5 )
+scale = Vector2( 0.995089, 0.994966 )
+polygon = PoolVector2Array( 1030, 94, 1175, 113, 1166, 371, 1024, 370 )
+
+[node name="ESCLocation" type="Position2D" parent="Blackboard"]
+position = Vector2( 1216, 912 )
+script = ExtResource( 6 )
+
+[node name="Barrels" type="Area2D" parent="."]
+pause_mode = 1
+position = Vector2( 3031, 801 )
+z_index = 1000
+script = ExtResource( 7 )
+combine_when_selected_action_is_in = [  ]
+inventory_texture = ExtResource( 8 )
+animations = null
+
+[node name="Sprite" type="Sprite" parent="Barrels"]
+position = Vector2( 23, 24 )
+texture = ExtResource( 8 )
+
+[node name="ESCItem" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1622, 799 )
+
+[node name="ESCItem2" type="Area2D" parent="."]
+pause_mode = 1
+script = ExtResource( 7 )
+global_id = "pub_door_item"
+esc_script = "res://rooms/pub/pub_exit.esc"
+is_exit = true
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ESCItem2"]
+polygon = PoolVector2Array( 2975, 277, 3195, 272, 3226, 740, 2975, 717 )
+
+[node name="ESCLocation" type="Position2D" parent="ESCItem2"]
+position = Vector2( 3040, 767 )
+script = ExtResource( 6 )
+global_id = "pub_exit"

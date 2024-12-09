@@ -1,0 +1,4 @@
+:pickup
+
+inventory_add beer
+set_active beer false

@@ -1,0 +1,3 @@
+:exit_scene
+say graham "I'm leaving now."
+change_scene "res://rooms/park/park.tscn"
