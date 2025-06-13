@@ -25,7 +25,7 @@ escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/escoria-core/plugin.cfg")
+enabled=PackedStringArray("res://addons/escoria-core/addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-simplemouse/addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg")
 
 [escoria]
 
@@ -67,3 +67,4 @@ sound/speech_folder="res://speech"
 sound/speech_extension="ogg"
 platform/skip_cache=false
 platform/skip_cache.mobile=true
+wizard/path_to_rooms="res://rooms"
