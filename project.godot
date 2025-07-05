@@ -1,16 +1,8 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
 config_version=5
 
 [application]
 
-config/name="Mostro"
+config/name="JAM2025PROJECT"
 run/main_scene="res://addons/escoria-core/game/main_scene.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
@@ -23,19 +15,24 @@ buses/default_bus_layout="res://addons/escoria-core/buses/default_bus_layout.tre
 
 escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/escoria-core/addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-simplemouse/addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg")
+enabled=PackedStringArray("res://addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg", "res://addons/puzzle_dependencies/plugin.cfg")
 
 [escoria]
 
 main/command_directories=["res://addons/escoria-core/game/core-scripts/esc/commands"]
 main/game_version=""
-main/game_start_script=""
 main/action_default_script=""
 main/force_quit=true
-main/text_lang="en"
-main/voice_lang="en"
+main/text_lang="en_EN"
+main/voice_lang="en_EN"
 main/savegames_path="user://saves/"
 main/settings_path="user://"
 main/game_migration_path=""
@@ -51,13 +48,13 @@ debug/enable_room_selector=false
 debug/room_selector_room_dir=""
 debug/enable_hover_stack_viewer=false
 debug/perform_script_analysis_at_runtime=true
-ui/default_dialog_type=""
-ui/game_scene=""
+ui/default_dialog_type="floating"
+ui/game_scene="res://addons/escoria-ui-simplemouse/game.tscn"
 ui/inventory_items_path="res://game/items/inventory/"
 ui/default_transition="curtain"
 ui/transition_paths=["res://addons/escoria-core/game/scenes/transitions/shaders/"]
 ui/inventory_item_size=Vector2(72, 72)
-ui/dialog_managers=[]
+ui/dialog_managers=["res://addons/escoria-dialog-simple/esc_dialog_simple.gd"]
 sound/master_volume=1
 sound/music_volume=1
 sound/sfx_volume=1
@@ -68,3 +65,60 @@ sound/speech_extension="ogg"
 platform/skip_cache=false
 platform/skip_cache.mobile=true
 wizard/path_to_rooms="res://rooms"
+dialog_simple/avatars_path="res://game/dialog_avatars"
+dialog_simple/text_time_per_letter_ms=100
+dialog_simple/text_time_per_fast_letter_ms=25
+dialog_simple/clear_text_by_click_only=false
+dialog_simple/reading_speed_in_wpm=200
+dialog_simple/left_click_action="Speed up"
+dialog_simple/stop_talking_animation_on="End of audio"
+main/game_start_script="res://game/start_game.esc"
+
+[puzzle_dependencies]
+
+types={
+0: {
+&"color": Color(0, 0, 0, 1),
+&"id": 0,
+&"label": "Type 1"
+},
+1: {
+&"color": Color(1, 0.470588, 0.419608, 1),
+&"id": 1,
+&"label": "Type 2"
+},
+2: {
+&"color": Color(0.741176, 0.576471, 0.976471, 1),
+&"id": 2,
+&"label": "Type 3"
+},
+3: {
+&"color": Color(0.45098, 0.94902, 0.501961, 1),
+&"id": 3,
+&"label": "Type 4"
+},
+4: {
+&"color": Color(1, 0.870588, 0.4, 1),
+&"id": 4,
+&"label": "Type 5"
+}
+}
+boards={
+"c50a2db2b5": {
+&"connections": [],
+&"id": "c50a2db2b5",
+&"label": "Untitled board",
+&"scroll_offset": Vector2(0, -248),
+&"things": [],
+&"zoom": 1.0
+}
+}
+minimap_enabled=true
+minimap_size=Vector2(200, 150)
+snapping_enabled=true
+snapping_distance=20
+current_board_id="c50a2db2b5"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
