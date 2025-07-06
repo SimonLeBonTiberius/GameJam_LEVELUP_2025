@@ -1,0 +1,49 @@
+strict graph {
+"f3595c5182" [label=" START
+", shape=Mrecord, style=filled, fillcolor="#ffde66", fontcolor="#000000"]
+"07e851c345" [label="END", shape=Mrecord, style=filled, fillcolor="#ffde66", fontcolor="#000000"]
+"5f12964d8b" [label="Get on top of the Desk to use the  Laptop
+", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"626266d0e5" [label="CRAFT PAIPER AIR PLANE ", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"b5c684bf54" [label="Game Card on top of the library
+(Body of the paper airplain)", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"7ae1e23833" [label="Find Clue/Resin Behindd the spider web (to connect all the part )", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"a5fbb2c404" [label="Find Post It in the small table (Winggs of the paper airplain)", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"83a799492d" [label="Find BOTTLE CAP/
+Clay  Near Trash Bin (Seat for the Airplane)", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"5a656d3950" [label="Craft launch pad", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"1e0e1276d5" [label="Find Elastic Rubber near the Bed", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"f706f933d3" [label="Find clothes peg in a Wordrobe drawer", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"40c876dd72" [label="use shoelaces  to Climb to The top Of library", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"cf31ba3cf2" [label="Find shoelaces Under the bad", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"523deb7b1e" [label=" 	Thee spider is busy heating the fly", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"4f73752bbf" [label="speak to flyy and convince it  that there is more food under the bed ", shape=Mrecord, style=filled, fillcolor="#ff786b", fontcolor="#000000"]
+"7f0b892667" [label=" Find A piece of candy 
+ in the floor", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"c79ce55b68" [label="Find Batteries under the table ", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"87def9a585" [label="Use the Remote on the floor to close  the window", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"1e2325807a" [label="THE COMPUTE TELL YOU THAT YOU HAVE TO RETHINK THE ORDINARY and make you small like a can of Coke", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"5f12964d8b" -- "07e851c345"
+"b5c684bf54" -- "626266d0e5"
+"7ae1e23833" -- "626266d0e5"
+"626266d0e5" -- "5f12964d8b"
+"a5fbb2c404" -- "626266d0e5"
+"83a799492d" -- "626266d0e5"
+"5a656d3950" -- "5f12964d8b"
+"1e0e1276d5" -- "5a656d3950"
+"f706f933d3" -- "5a656d3950"
+"40c876dd72" -- "b5c684bf54"
+"cf31ba3cf2" -- "40c876dd72"
+"523deb7b1e" -- "7ae1e23833"
+"4f73752bbf" -- "523deb7b1e"
+"7f0b892667" -- "4f73752bbf"
+"87def9a585" -- "5f12964d8b"
+"c79ce55b68" -- "87def9a585"
+"f3595c5182" -- "1e2325807a"
+"1e2325807a" -- "cf31ba3cf2"
+"1e2325807a" -- "7f0b892667"
+"1e2325807a" -- "a5fbb2c404"
+"1e2325807a" -- "1e0e1276d5"
+"1e2325807a" -- "f706f933d3"
+"1e2325807a" -- "c79ce55b68"
+}

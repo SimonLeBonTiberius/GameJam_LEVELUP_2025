@@ -1,3 +1,11 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
@@ -80,37 +88,225 @@ types={
 0: {
 &"color": Color(0, 0, 0, 1),
 &"id": 0,
-&"label": "Type 1"
+&"label": "Object"
 },
 1: {
 &"color": Color(1, 0.470588, 0.419608, 1),
 &"id": 1,
-&"label": "Type 2"
+&"label": "Dialog"
 },
 2: {
 &"color": Color(0.741176, 0.576471, 0.976471, 1),
 &"id": 2,
-&"label": "Type 3"
+&"label": "Puzzle"
 },
 3: {
 &"color": Color(0.45098, 0.94902, 0.501961, 1),
 &"id": 3,
-&"label": "Type 4"
+&"label": "EVENT"
 },
 4: {
 &"color": Color(1, 0.870588, 0.4, 1),
 &"id": 4,
-&"label": "Type 5"
+&"label": "STATE"
 }
 }
 boards={
 "c50a2db2b5": {
-&"connections": [],
+&"connections": [{
+&"from": &"5f12964d8b",
+&"to": &"07e851c345"
+}, {
+&"from": &"b5c684bf54",
+&"to": &"626266d0e5"
+}, {
+&"from": &"7ae1e23833",
+&"to": &"626266d0e5"
+}, {
+&"from": &"626266d0e5",
+&"to": &"5f12964d8b"
+}, {
+&"from": &"a5fbb2c404",
+&"to": &"626266d0e5"
+}, {
+&"from": &"83a799492d",
+&"to": &"626266d0e5"
+}, {
+&"from": &"5a656d3950",
+&"to": &"5f12964d8b"
+}, {
+&"from": &"1e0e1276d5",
+&"to": &"5a656d3950"
+}, {
+&"from": &"f706f933d3",
+&"to": &"5a656d3950"
+}, {
+&"from": &"40c876dd72",
+&"to": &"b5c684bf54"
+}, {
+&"from": &"cf31ba3cf2",
+&"to": &"40c876dd72"
+}, {
+&"from": &"523deb7b1e",
+&"to": &"7ae1e23833"
+}, {
+&"from": &"4f73752bbf",
+&"to": &"523deb7b1e"
+}, {
+&"from": &"7f0b892667",
+&"to": &"4f73752bbf"
+}, {
+&"from": &"87def9a585",
+&"to": &"5f12964d8b"
+}, {
+&"from": &"c79ce55b68",
+&"to": &"87def9a585"
+}, {
+&"from": &"f3595c5182",
+&"to": &"1e2325807a"
+}, {
+&"from": &"1e2325807a",
+&"to": &"cf31ba3cf2"
+}, {
+&"from": &"1e2325807a",
+&"to": &"7f0b892667"
+}, {
+&"from": &"1e2325807a",
+&"to": &"a5fbb2c404"
+}, {
+&"from": &"1e2325807a",
+&"to": &"1e0e1276d5"
+}, {
+&"from": &"1e2325807a",
+&"to": &"f706f933d3"
+}, {
+&"from": &"1e2325807a",
+&"to": &"c79ce55b68"
+}],
 &"id": "c50a2db2b5",
-&"label": "Untitled board",
-&"scroll_offset": Vector2(0, -248),
-&"things": [],
-&"zoom": 1.0
+&"label": "Main Board",
+&"scroll_offset": Vector2(-1183.72, -502.894),
+&"things": [{
+&"id": &"f3595c5182",
+&"position_offset": Vector2(-1620, 100),
+&"size": Vector2(150, 80),
+&"text": " START
+",
+&"type": 4
+}, {
+&"id": &"07e851c345",
+&"position_offset": Vector2(1760, 40),
+&"size": Vector2(150, 80),
+&"text": "END",
+&"type": 4
+}, {
+&"id": &"5f12964d8b",
+&"position_offset": Vector2(1460, -220),
+&"size": Vector2(200, 160),
+&"text": "Get on top of the Desk to use the  Laptop
+",
+&"type": 3
+}, {
+&"id": &"626266d0e5",
+&"position_offset": Vector2(1020, -180),
+&"size": Vector2(200, 140),
+&"text": "CRAFT PAIPER AIR PLANE ",
+&"type": 0
+}, {
+&"id": &"b5c684bf54",
+&"position_offset": Vector2(300, -300),
+&"size": Vector2(200, 120),
+&"text": "Game Card on top of the library
+(Body of the paper airplain)",
+&"type": 0
+}, {
+&"id": &"7ae1e23833",
+&"position_offset": Vector2(400, -160),
+&"size": Vector2(220, 120),
+&"text": "Find Clue/Resin Behindd the spider web (to connect all the part )",
+&"type": 0
+}, {
+&"id": &"a5fbb2c404",
+&"position_offset": Vector2(-200, -900),
+&"size": Vector2(180, 160),
+&"text": "Find Post It in the small table (Winggs of the paper airplain)",
+&"type": 0
+}, {
+&"id": &"83a799492d",
+&"position_offset": Vector2(440, 20),
+&"size": Vector2(200, 160),
+&"text": "Find BOTTLE CAP/
+Clay  Near Trash Bin (Seat for the Airplane)",
+&"type": 0
+}, {
+&"id": &"5a656d3950",
+&"position_offset": Vector2(960, 200),
+&"size": Vector2(260, 200),
+&"text": "Craft launch pad",
+&"type": 0
+}, {
+&"id": &"1e0e1276d5",
+&"position_offset": Vector2(-280, 460),
+&"size": Vector2(200, 140),
+&"text": "Find Elastic Rubber near the Bed",
+&"type": 0
+}, {
+&"id": &"f706f933d3",
+&"position_offset": Vector2(-320, 700),
+&"size": Vector2(220, 180),
+&"text": "Find clothes peg in a Wordrobe drawer",
+&"type": 0
+}, {
+&"id": &"40c876dd72",
+&"position_offset": Vector2(-100, -420),
+&"size": Vector2(280, 100),
+&"text": "use shoelaces  to Climb to The top Of library",
+&"type": 3
+}, {
+&"id": &"cf31ba3cf2",
+&"position_offset": Vector2(-460, -360),
+&"size": Vector2(180, 140),
+&"text": "Find shoelaces Under the bad",
+&"type": 0
+}, {
+&"id": &"523deb7b1e",
+&"position_offset": Vector2(20, -160),
+&"size": Vector2(160, 140),
+&"text": " 	Thee spider is busy heating the fly",
+&"type": 3
+}, {
+&"id": &"4f73752bbf",
+&"position_offset": Vector2(-300, -140),
+&"size": Vector2(220, 140),
+&"text": "speak to flyy and convince it  that there is more food under the bed ",
+&"type": 1
+}, {
+&"id": &"7f0b892667",
+&"position_offset": Vector2(-660, -120),
+&"size": Vector2(200, 140),
+&"text": " Find A piece of candy 
+ in the floor",
+&"type": 0
+}, {
+&"id": &"c79ce55b68",
+&"position_offset": Vector2(-240, 1040),
+&"size": Vector2(200, 120),
+&"text": "Find Batteries under the table ",
+&"type": 0
+}, {
+&"id": &"87def9a585",
+&"position_offset": Vector2(1000, 820),
+&"size": Vector2(200, 120),
+&"text": "Use the Remote on the floor to close  the window",
+&"type": 3
+}, {
+&"id": &"1e2325807a",
+&"position_offset": Vector2(-1400, 60),
+&"size": Vector2(260, 180),
+&"text": "THE COMPUTE TELL YOU THAT YOU HAVE TO RETHINK THE ORDINARY and make you small like a can of Coke",
+&"type": 3
+}],
+&"zoom": 0.546043
 }
 }
 minimap_enabled=true
@@ -118,6 +314,7 @@ minimap_size=Vector2(200, 150)
 snapping_enabled=true
 snapping_distance=20
 current_board_id="c50a2db2b5"
+last_export_path="res://Puzzle Dependecny V 0.0.1.dot"
 
 [rendering]
 
