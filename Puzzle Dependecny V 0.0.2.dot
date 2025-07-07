@@ -1,0 +1,45 @@
+strict graph {
+"f3595c5182" [label=" START
+", shape=Mrecord, style=filled, fillcolor="#ffde66", fontcolor="#000000"]
+"07e851c345" [label="END", shape=Mrecord, style=filled, fillcolor="#ffde66", fontcolor="#000000"]
+"626266d0e5" [label="CRAFT  AIR PLANE 
+ROOM6:On top of library", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"b5c684bf54" [label="Ruller/Bookmark on top of the table 
+(Wings of the airplain)
+ROOM:5 On small table", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"7ae1e23833" [label="Find Marke/Pen under table  (Body  of the airplain)ROOM:2 Under bed", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"5a656d3950" [label="Craft launch pad(Rubber+Toy Trace)
+ROM6:On top of library", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"1e0e1276d5" [label="Find Elastic Rubber 
+
+", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"40c876dd72" [label="use hair brush  to Climb to The top Of library", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"cf31ba3cf2" [label="Find shoelaces Under the bad
+ROOM:2 Under bed", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"523deb7b1e" [label=" 	Thee spider is busy heating the fly", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"4f73752bbf" [label="speak to flyy and convince it  that there is more food under the bed ", shape=Mrecord, style=filled, fillcolor="#ff786b", fontcolor="#000000"]
+"7f0b892667" [label=" Find A piece of candy 
+ in the floor
+Room:7 FLOOR", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"1e2325807a" [label="THE COMPUTE TELL YOU THAT YOU HAVE TO RETHINK THE ORDINARY and make you small like a can of Coke", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"83c5c83ef7" [label="Find a hair brush
+ROOM:3 Bottom of wardrobe", shape=Mrecord, style=filled, fillcolor="#000000", fontcolor="#ffffff"]
+"1c9467cd23" [label="Use hair brush TO climb to the cable  , from the cable to the top of the library ", shape=Mrecord, style=filled, fillcolor="#73f280", fontcolor="#000000"]
+"b5c684bf54" -- "626266d0e5"
+"7ae1e23833" -- "626266d0e5"
+"1e0e1276d5" -- "5a656d3950"
+"40c876dd72" -- "b5c684bf54"
+"cf31ba3cf2" -- "40c876dd72"
+"523deb7b1e" -- "7ae1e23833"
+"4f73752bbf" -- "523deb7b1e"
+"7f0b892667" -- "4f73752bbf"
+"f3595c5182" -- "1e2325807a"
+"1e2325807a" -- "cf31ba3cf2"
+"1e2325807a" -- "7f0b892667"
+"1e2325807a" -- "1e0e1276d5"
+"626266d0e5" -- "07e851c345"
+"5a656d3950" -- "07e851c345"
+"1e2325807a" -- "83c5c83ef7"
+"83c5c83ef7" -- "1c9467cd23"
+"1c9467cd23" -- "626266d0e5"
+}
