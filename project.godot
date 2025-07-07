@@ -25,9 +25,9 @@ escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/stretch/mode="viewport"
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -185,7 +185,7 @@ boards={
 }],
 &"id": "c50a2db2b5",
 &"label": "Main Board",
-&"scroll_offset": Vector2(-1183.72, -502.894),
+&"scroll_offset": Vector2(-533.921, -208.802),
 &"things": [{
 &"id": &"f3595c5182",
 &"position_offset": Vector2(-1620, 100),
@@ -306,7 +306,7 @@ Clay  Near Trash Bin (Seat for the Airplane)",
 &"text": "THE COMPUTE TELL YOU THAT YOU HAVE TO RETHINK THE ORDINARY and make you small like a can of Coke",
 &"type": 3
 }],
-&"zoom": 0.546043
+&"zoom": 0.232568
 }
 }
 minimap_enabled=true
@@ -319,3 +319,5 @@ last_export_path="res://Puzzle Dependecny V 0.0.1.dot"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
