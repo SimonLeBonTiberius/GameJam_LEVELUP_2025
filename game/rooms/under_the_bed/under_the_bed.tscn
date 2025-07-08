@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7qwgpcumyo1k"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_u54lr"]
+[ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_j3gl6"]
+[ext_resource type="Texture2D" uid="uid://jryveyafcgb7" path="res://game/rooms/under_the_bed/img/under_bed_L.png" id="3_i00l7"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_n6c7w"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_qe3q5"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_ef41m"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3f4dk"]
+vertices = PackedVector2Array(925.773, 513.047, 27.4766, 517.938, 43.5391, 172.961, 918.211, 170.031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(34, 163, 928, 160, 936, 523, 17, 528)])
+
+[node name="under_the_bed" type="Node2D"]
+script = ExtResource("1_u54lr")
+global_id = "under_the_bed"
+esc_script = "res://game/rooms/under_the_bed/script/r_under_bed.esc"
+player_scene = ExtResource("2_j3gl6")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 948.0
+offset_bottom = 579.0
+mouse_filter = 2
+texture = ExtResource("3_i00l7")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("4_n6c7w")
+
+[node name="WalkableArea" type="Node2D" parent="."]
+script = ExtResource("5_qe3q5")
+scale_min = 0.2
+scale_max = 0.2
+player_speed_multiplier = 5.0
+player_doubleclick_speed_multiplier = 10.0
+
+[node name="_NavigationRegion2D_24591" type="NavigationRegion2D" parent="WalkableArea"]
+navigation_polygon = SubResource("NavigationPolygon_3f4dk")
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="StartPos" type="Marker2D" parent="."]
+position = Vector2(99, 243)
+script = ExtResource("6_ef41m")
+global_id = "whole_room_start_pos"
+is_start_location = true

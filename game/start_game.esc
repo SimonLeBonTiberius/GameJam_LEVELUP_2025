@@ -1,2 +1,3 @@
 :init
 	change_scene("res://game/rooms/whole_room/whole_room.tscn", false)
+	
