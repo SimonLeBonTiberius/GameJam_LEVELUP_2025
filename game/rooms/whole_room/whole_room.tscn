@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rcqfiv50wij4"]
+[gd_scene load_steps=10 format=3 uid="uid://c7qwgpcumyo1k"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_d6akp"]
 [ext_resource type="PackedScene" uid="uid://cgrkw43mh8b3r" path="res://game/characters/tiny_player.scn" id="2_d6akp"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_p38wx"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_p5msq"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_5njtm"]
-[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="6_o2sl0"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="8_p38wx"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="8_v7gm7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3f4dk"]
@@ -41,49 +41,24 @@ navigation_polygon = SubResource("NavigationPolygon_3f4dk")
 
 [node name="RoomObjects" type="Node2D" parent="."]
 
-[node name="Exit_point" type="Node2D" parent="."]
-
-[node name="ESCItem" type="Area2D" parent="Exit_point"]
-process_mode = 1
-visible = false
-position = Vector2(263, 456)
-priority = 1
-script = ExtResource("6_o2sl0")
-global_id = "r_exit_under_bed"
-esc_script = "res://game/rooms/whole_room/scripts/r_under_bed.esc"
-tooltip_name = "under the bed"
-combine_when_selected_action_is_in = PackedStringArray()
-is_exit = true
-metadata/_custom_type_script = "uid://dshelmw7y44qg"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_point/ESCItem"]
-polygon = PackedVector2Array(10, -71, 13, -20, -10, 23, -31, 1)
-
-[node name="ESCLocation" type="Marker2D" parent="Exit_point/ESCItem/CollisionPolygon2D"]
-position = Vector2(1, 1)
-script = ExtResource("6_5njtm")
-metadata/_custom_type_script = "uid://beh3ds4eapldu"
-
-[node name="ESCExit" type="Area2D" parent="Exit_point"]
-position = Vector2(278, 460)
-script = ExtResource("8_v7gm7")
-target_scene = "res://game/rooms/whole_room/scripts/whole_room.esc"
-exit_direction = "left"
-global_id = "r_exit_under_bed"
-esc_script = "res://game/rooms/whole_room/scripts/r_under_bed.esc"
-is_exit = true
-metadata/_custom_type_script = "uid://btt4cprco53ec"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_point/ESCExit"]
-polygon = PackedVector2Array(10, -71, 13, -20, -10, 23, -31, 1)
-
-[node name="ESCLocation" type="Marker2D" parent="Exit_point/ESCExit/CollisionPolygon2D"]
-position = Vector2(1, 1)
-script = ExtResource("6_5njtm")
-metadata/_custom_type_script = "uid://beh3ds4eapldu"
-
 [node name="StartPos" type="Marker2D" parent="."]
 position = Vector2(476, 511)
 script = ExtResource("6_5njtm")
 global_id = "whole_room_start_pos"
 is_start_location = true
+
+[node name="under_bed_enter" type="Area2D" parent="."]
+script = ExtResource("8_v7gm7")
+target_scene = "uid://c7qwgpcumyo1k"
+global_id = "under_bed_enter"
+tooltip_name = "Under Bed"
+is_exit = true
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="under_bed_enter"]
+polygon = PackedVector2Array(268, 392, 272, 435, 226, 511, 221, 462)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="under_bed_enter"]
+position = Vector2(278, 461)
+script = ExtResource("8_p38wx")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

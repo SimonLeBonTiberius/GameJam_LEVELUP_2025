@@ -15,7 +15,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(34, 163, 928, 160, 936,
 [node name="under_the_bed" type="Node2D"]
 script = ExtResource("1_u54lr")
 global_id = "under_the_bed"
-esc_script = "res://game/rooms/under_the_bed/script/r_under_bed.esc"
+esc_script = "res://game/rooms/under_the_bed/r_under_bed.esc"
 player_scene = ExtResource("2_j3gl6")
 
 [node name="Background" type="TextureRect" parent="."]
