@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7doqmnwjn3fu"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_wjrlp"]
+[ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_vq04j"]
+[ext_resource type="Texture2D" uid="uid://bo33fm5poxvkn" path="res://game/rooms/under_small_table/img/under_table_L.png" id="3_n0bib"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_yhq05"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_ipsqu"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_6qapp"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wjrlp"]
+vertices = PackedVector2Array(851.297, 512.031, 129.727, 512.961, 178.367, 475.977, 805.398, 474.008)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(100, 523, 175, 466, 809, 464, 879, 522)])
+
+[node name="under_small_table" type="Node2D"]
+script = ExtResource("1_wjrlp")
+global_id = "under_small_table"
+esc_script = "res://game/rooms//under_small_table/scripts/under_small_table.esc"
+player_scene = ExtResource("2_vq04j")
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource("3_n0bib")
+script = ExtResource("4_yhq05")
+
+[node name="WalkableArea" type="Node2D" parent="."]
+script = ExtResource("5_ipsqu")
+
+[node name="_NavigationRegion2D_52717" type="NavigationRegion2D" parent="WalkableArea"]
+navigation_polygon = SubResource("NavigationPolygon_wjrlp")
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="StartPos" type="Marker2D" parent="."]
+position = Vector2(502, 500)
+script = ExtResource("6_6qapp")
+global_id = "under_small_table_start_pos"
+is_start_location = true

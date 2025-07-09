@@ -52,7 +52,7 @@ func _enable_plugin():
 	print("Enabling Escoria Wizard plugin")
 	ESCProjectSettingsManager.register_setting(
 		"escoria/wizard/path_to_rooms",
-		"res://rooms",
+		"res://game/rooms/",
 		{
 			"type": TYPE_STRING
 		}

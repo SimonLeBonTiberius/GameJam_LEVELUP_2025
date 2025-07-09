@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xnj4qovsjmbe"]
+[gd_scene load_steps=9 format=3 uid="uid://c7qwgpcumyo1k"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_u54lr"]
 [ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_j3gl6"]
@@ -16,6 +16,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(640, 477, 611, 334, 482
 [node name="under_the_bed" type="Node2D"]
 script = ExtResource("1_u54lr")
 global_id = "under_the_bed_room"
+esc_script = "res://game/rooms/under_the_bed/scripts/under_the_bed.esc"
 player_scene = ExtResource("2_j3gl6")
 metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
 

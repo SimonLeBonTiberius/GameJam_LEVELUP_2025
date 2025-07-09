@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7qwgpcumyo1k"]
+[gd_scene load_steps=10 format=3 uid="uid://c7qwgpcumyo1k"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_d6akp"]
 [ext_resource type="PackedScene" uid="uid://cgrkw43mh8b3r" path="res://game/characters/tiny_player.scn" id="2_d6akp"]
@@ -6,10 +6,13 @@
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_p38wx"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_p5msq"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_5njtm"]
-[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_o2sl0"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_o2sl0"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="8_v7gm7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3f4dk"]
-outlines = Array[PackedVector2Array]([PackedVector2Array(251, 479, 941, 485, 926, 467, 793, 464, 743, 417, 674, 363, 599, 363, 600, 412, 582, 411, 583, 371, 516, 367, 493, 441, 447, 441, 438, 393, 397, 364, 365, 364, 365, 411, 350, 415)])
+vertices = PackedVector2Array(377.453, 432.508, 375.359, 374, 393.828, 374, 428.906, 398.813, 438.703, 451, 610.219, 422.578, 609.211, 373, 670.547, 373, 736.461, 424.578, 788.68, 473.672, 301.852, 382.578, 332.461, 380.617, 334.352, 423.141, 265.922, 469.117, 523.219, 377.438, 572.75, 380.398, 571.758, 420.453, 500.359, 451)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(13, 12, 0, 4), PackedInt32Array(9, 13, 4, 17), PackedInt32Array(5, 9, 17, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(251, 479, 941, 485, 926, 467, 793, 464, 743, 417, 674, 363, 599, 363, 600, 412, 582, 411, 583, 371, 516, 367, 493, 441, 447, 441, 438, 393, 397, 364, 365, 364, 367, 420, 344, 415, 342, 370, 295, 373)])
 
 [node name="whole_room" type="Node2D"]
 script = ExtResource("1_d6akp")
@@ -46,23 +49,37 @@ is_start_location = true
 
 [node name="Exits" type="Node2D" parent="."]
 
-[node name="exit_under_the_bed" type="Area2D" parent="Exits"]
-process_mode = 1
-position = Vector2(-13, 50)
+[node name="enter_under_bed_l_" type="Area2D" parent="Exits"]
 script = ExtResource("7_o2sl0")
-global_id = "exit_under_the_bed"
-esc_script = "res://game/rooms/whole_room/scripts/r_under_bed.esc"
-tooltip_name = "Under the Bed"
-combine_when_selected_action_is_in = PackedStringArray()
+target_scene = "uid://c7qwgpcumyo1k"
+exit_direction = "left"
+global_id = "enter_under_bed_l_"
+tooltip_name = "Go under bed"
+default_action = "walk"
 is_exit = true
-metadata/_custom_type_script = "uid://dshelmw7y44qg"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/exit_under_the_bed"]
-polygon = PackedVector2Array(264, 479, 292, 433, 284, 374, 232, 467)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/enter_under_bed_l_"]
+polygon = PackedVector2Array(258, 406, 282, 477, 260, 537, 221, 539, 217, 491)
 
-[node name="ESCLocation" type="Marker2D" parent="Exits/exit_under_the_bed"]
-position = Vector2(297, 445)
-script = ExtResource("6_5njtm")
-metadata/_custom_type_script = "uid://beh3ds4eapldu"
+[node name="ESCInteractionLocation" type="Marker2D" parent="Exits/enter_under_bed_l_"]
+position = Vector2(290, 486)
+script = ExtResource("8_v7gm7")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="enter_under_small_table_r_" type="Area2D" parent="Exits"]
+script = ExtResource("7_o2sl0")
+target_scene = "uid://b7doqmnwjn3fu"
+global_id = "enter_under_small_table_r_"
+tooltip_name = "Go under small table"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/enter_under_small_table_r_"]
+polygon = PackedVector2Array(744, 398, 793, 435, 922, 434, 926, 533, 748, 536)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="Exits/enter_under_small_table_r_"]
+position = Vector2(747, 500)
+script = ExtResource("8_v7gm7")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
 [node name="GameObjects" type="Node2D" parent="."]
