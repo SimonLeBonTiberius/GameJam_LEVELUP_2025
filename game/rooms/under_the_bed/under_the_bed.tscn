@@ -1,46 +1,62 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7qwgpcumyo1k"]
+[gd_scene load_steps=9 format=3 uid="uid://xnj4qovsjmbe"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_u54lr"]
 [ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_j3gl6"]
-[ext_resource type="Texture2D" uid="uid://jryveyafcgb7" path="res://game/rooms/under_the_bed/img/under_bed_L.png" id="3_i00l7"]
+[ext_resource type="Texture2D" uid="uid://b6ipjkf8iu4ws" path="res://game/rooms/under_the_bed/img/under_bed_candy_L.png" id="3_j3gl6"]
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_n6c7w"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_qe3q5"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_ef41m"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_j3gl6"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_3f4dk"]
-vertices = PackedVector2Array(925.773, 513.047, 27.4766, 517.938, 43.5391, 172.961, 918.211, 170.031)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(34, 163, 928, 160, 936, 523, 17, 528)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_a733n"]
+vertices = PackedVector2Array(319.141, 182, 257.242, 182, 263.758, 126.547, 309.633, 15.1719, 928.109, 137.453, 933.844, 509.852, 662.742, 506.094, 649.609, 474.078, 620.102, 328.563, 541.43, 20.9609, 485.609, 217, 354.141, 217)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 4, 8, 10, 3), PackedInt32Array(3, 10, 11, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(640, 477, 611, 334, 482, 227, 350, 227, 315, 192, 246, 192, 254, 124, 303, 5, 543, 11, 938, 130, 944, 520, 656, 516)])
 
 [node name="under_the_bed" type="Node2D"]
 script = ExtResource("1_u54lr")
-global_id = "under_the_bed"
-esc_script = "res://game/rooms/under_the_bed/r_under_bed.esc"
+global_id = "under_the_bed_room"
 player_scene = ExtResource("2_j3gl6")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 948.0
-offset_bottom = 579.0
+[node name="ESCBackground" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_right = 962.0
+offset_bottom = 588.0
 mouse_filter = 2
-texture = ExtResource("3_i00l7")
+texture = ExtResource("3_j3gl6")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("4_n6c7w")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
 
 [node name="WalkableArea" type="Node2D" parent="."]
 script = ExtResource("5_qe3q5")
-scale_min = 0.2
-scale_max = 0.2
-player_speed_multiplier = 5.0
-player_doubleclick_speed_multiplier = 10.0
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 
-[node name="_NavigationRegion2D_24591" type="NavigationRegion2D" parent="WalkableArea"]
-navigation_polygon = SubResource("NavigationPolygon_3f4dk")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea"]
+navigation_polygon = SubResource("NavigationPolygon_a733n")
 
-[node name="RoomObjects" type="Node2D" parent="."]
-
-[node name="StartPos" type="Marker2D" parent="."]
-position = Vector2(99, 243)
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(719, 153)
 script = ExtResource("6_ef41m")
-global_id = "whole_room_start_pos"
+global_id = "under_the_bed_start_pos"
 is_start_location = true
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="ESCExit" type="Area2D" parent="."]
+script = ExtResource("7_j3gl6")
+target_scene = "uid://c7qwgpcumyo1k"
+global_id = "exit_whole_room"
+tooltip_name = "Bed Room"
+is_exit = true
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ESCExit"]
+position = Vector2(4, 2)
+polygon = PackedVector2Array(394, -5, 963, 3, 954, 130, 572, 20)
+
+[node name="ESCLocation" type="Marker2D" parent="ESCExit"]
+position = Vector2(757, 124)
+script = ExtResource("6_ef41m")
+metadata/_custom_type_script = "uid://beh3ds4eapldu"

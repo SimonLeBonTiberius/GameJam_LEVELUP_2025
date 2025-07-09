@@ -1,0 +1,2 @@
+:exit_scene
+	change_scene("res://game/rooms/under_the_bed/under_the_bed.tscn")

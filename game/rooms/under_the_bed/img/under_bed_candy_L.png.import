@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jryveyafcgb7"
-path="res://.godot/imported/under_bed_L.png-17acf058a4ecec1631e6629a8315bccd.ctex"
+uid="uid://b6ipjkf8iu4ws"
+path="res://.godot/imported/under_bed_candy_L.png-4bee777416cd2b113b373f3b83bcc19a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/rooms/under_the_bed/img/under_bed_L.png"
-dest_files=["res://.godot/imported/under_bed_L.png-17acf058a4ecec1631e6629a8315bccd.ctex"]
+source_file="res://game/rooms/under_the_bed/img/under_bed_candy_L.png"
+dest_files=["res://.godot/imported/under_bed_candy_L.png-4bee777416cd2b113b373f3b83bcc19a.ctex"]
 
 [params]
 
