@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7qwgpcumyo1k"]
+[gd_scene load_steps=10 format=3 uid="uid://bnsxbh123ncm2"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_d6akp"]
 [ext_resource type="PackedScene" uid="uid://cgrkw43mh8b3r" path="res://game/characters/tiny_player.scn" id="2_d6akp"]
-[ext_resource type="Texture2D" uid="uid://def7flkljagqw" path="res://game/rooms/whole_room/img/test_room_l.png" id="3_o2sl0"]
+[ext_resource type="Texture2D" uid="uid://d1ts3p7yhaigx" path="res://game/rooms/whole_room/img/main_room_L.png" id="3_v7gm7"]
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_p38wx"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_p5msq"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_5njtm"]
@@ -25,7 +25,7 @@ offset_top = -3.0
 offset_right = 981.0
 offset_bottom = 537.0
 mouse_filter = 2
-texture = ExtResource("3_o2sl0")
+texture = ExtResource("3_v7gm7")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("4_p38wx")
@@ -72,6 +72,7 @@ script = ExtResource("7_o2sl0")
 target_scene = "uid://b7doqmnwjn3fu"
 global_id = "enter_under_small_table_r_"
 tooltip_name = "Go under small table"
+is_exit = true
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/enter_under_small_table_r_"]
@@ -82,4 +83,20 @@ position = Vector2(747, 500)
 script = ExtResource("8_v7gm7")
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
-[node name="GameObjects" type="Node2D" parent="."]
+[node name="enter_wardrobe_l_" type="Area2D" parent="Exits"]
+script = ExtResource("7_o2sl0")
+target_scene = "uid://d2sgqojxeolm5"
+global_id = "enter_wardrobe_l_"
+tooltip_name = "Go in the Wardrobe"
+is_exit = true
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/enter_wardrobe_l_"]
+polygon = PackedVector2Array(272, 406, 307, 368, 312, 409, 289, 460, 279, 458)
+
+[node name="ESCLocation" type="Marker2D" parent="Exits/enter_wardrobe_l_"]
+position = Vector2(304, 437)
+script = ExtResource("6_5njtm")
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="RoomObjects" type="Node2D" parent="."]

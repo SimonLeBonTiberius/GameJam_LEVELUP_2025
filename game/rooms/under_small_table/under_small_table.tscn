@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7doqmnwjn3fu"]
+[gd_scene load_steps=9 format=3 uid="uid://b7doqmnwjn3fu"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_wjrlp"]
 [ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_vq04j"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_yhq05"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_ipsqu"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_6qapp"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_vq04j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjrlp"]
-vertices = PackedVector2Array(851.297, 512.031, 129.727, 512.961, 178.367, 475.977, 805.398, 474.008)
+vertices = PackedVector2Array(845.57, 477.977, 884.82, 508.172, 129.922, 512.813, 178.352, 476.008)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(100, 523, 175, 466, 809, 464, 879, 522)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(100, 523, 175, 466, 849, 468, 914, 518)])
 
 [node name="under_small_table" type="Node2D"]
 script = ExtResource("1_wjrlp")
@@ -27,12 +28,60 @@ script = ExtResource("4_yhq05")
 script = ExtResource("5_ipsqu")
 
 [node name="_NavigationRegion2D_52717" type="NavigationRegion2D" parent="WalkableArea"]
+position = Vector2(-11, -16)
 navigation_polygon = SubResource("NavigationPolygon_wjrlp")
 
-[node name="RoomObjects" type="Node2D" parent="."]
-
 [node name="StartPos" type="Marker2D" parent="."]
-position = Vector2(502, 500)
+position = Vector2(499, 469)
 script = ExtResource("6_6qapp")
 global_id = "under_small_table_start_pos"
 is_start_location = true
+
+[node name="Exits" type="Node2D" parent="."]
+position = Vector2(499, 469)
+
+[node name="exit_bedroom_r_" type="Area2D" parent="Exits"]
+script = ExtResource("7_vq04j")
+target_scene = "uid://bnsxbh123ncm2"
+global_id = "exit_bedroom_r_"
+tooltip_name = "Bed Room"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/exit_bedroom_r_"]
+polygon = PackedVector2Array(-387, 30, -395, 70, 420, 72, 371, 27)
+
+[node name="ESCLocation" type="Marker2D" parent="Exits/exit_bedroom_r_"]
+position = Vector2(-26, 17)
+script = ExtResource("6_6qapp")
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="exit_bedroom_r_2" type="Area2D" parent="Exits"]
+script = ExtResource("7_vq04j")
+target_scene = "uid://bnsxbh123ncm2"
+global_id = "exit_bedroom_r_2"
+tooltip_name = "Bed Room"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/exit_bedroom_r_2"]
+polygon = PackedVector2Array(342, -14, 391, 27, 457, 25, 452, -18)
+
+[node name="ESCLocation" type="Marker2D" parent="Exits/exit_bedroom_r_2"]
+position = Vector2(342, 0)
+script = ExtResource("6_6qapp")
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="exit_above_table_l_" type="Area2D" parent="Exits"]
+script = ExtResource("7_vq04j")
+target_scene = "uid://d3rmihtjyvjv1"
+global_id = "exit_above_table_l_"
+is_exit = true
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/exit_above_table_l_"]
+polygon = PackedVector2Array(255, -468, 258, -331, 434, -332, 430, -472)
+
+[node name="ESCLocation" type="Marker2D" parent="Exits/exit_above_table_l_"]
+script = ExtResource("6_6qapp")
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="RoomObjects" type="Node2D" parent="."]

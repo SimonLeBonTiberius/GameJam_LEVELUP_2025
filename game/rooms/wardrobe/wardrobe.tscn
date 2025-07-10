@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2sgqojxeolm5"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_6jp2f"]
+[ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_hg5to"]
+[ext_resource type="Texture2D" uid="uid://bvw1x7o6ebi3u" path="res://game/rooms/wardrobe/img/wardrobe_L.png" id="2_pj7bf"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_hg5to"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="4_o6dm6"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="5_7uyel"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_o6dm6"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pj7bf"]
+vertices = PackedVector2Array(858.609, 476.258, 80.0469, 482.742, 111.258, 459.992, 832.953, 459)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(108, 450, 836, 449, 891, 486, 49, 493)])
+
+[node name="Wardrobe" type="Node2D"]
+script = ExtResource("1_6jp2f")
+global_id = "wardrobe_room"
+player_scene = ExtResource("2_hg5to")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="ESCBackground" type="TextureRect" parent="."]
+offset_top = -10.0
+offset_right = 959.0
+offset_bottom = 556.0
+mouse_filter = 2
+texture = ExtResource("2_pj7bf")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("3_hg5to")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="ESCTerrain" type="Node2D" parent="."]
+script = ExtResource("5_o6dm6")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
+navigation_polygon = SubResource("NavigationPolygon_pj7bf")
+
+[node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(791, 467)
+script = ExtResource("4_o6dm6")
+global_id = "wardrobe_start"
+is_start_location = true
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="Exits" type="Node2D" parent="."]
+
+[node name="ESCExit" type="Area2D" parent="Exits"]
+script = ExtResource("5_7uyel")
+target_scene = "uid://bnsxbh123ncm2"
+global_id = "exit_wardrobe_r_"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/ESCExit"]
+polygon = PackedVector2Array(18, 527, 65, 491, 897, 484, 947, 529)
+
+[node name="ESCLocation" type="Marker2D" parent="Exits/ESCExit"]
+position = Vector2(469, 476)
+script = ExtResource("4_o6dm6")
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="RoomObjects" type="Node2D" parent="."]

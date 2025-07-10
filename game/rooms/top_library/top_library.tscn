@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd85evwjvj4lf"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_dnays"]
+[ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_cioqv"]
+[ext_resource type="Texture2D" uid="uid://hbqk1vcn4371" path="res://game/rooms/top_library/img/top_library_L.png" id="2_kvbdh"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_cioqv"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="4_dd7rh"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_pj8qn"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_dd7rh"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dnays"]
+vertices = PackedVector2Array(495.602, 362, 636.078, 362, 606.813, 449, 486.07, 377.609, 166.578, 357.328, 248.594, 364.227, 252.5, 422.789, 68.3672, 449, 348.133, 448.672)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 3, 2), PackedInt32Array(8, 2, 7), PackedInt32Array(7, 6, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(43, 459, 163, 347, 258, 355, 262, 415, 347, 438, 479, 370, 490, 352, 650, 352, 614, 459)])
+
+[node name="TopLibrary" type="Node2D"]
+script = ExtResource("1_dnays")
+global_id = "top_library_room"
+player_scene = ExtResource("2_cioqv")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="ESCBackground" type="TextureRect" parent="."]
+offset_right = 960.0
+offset_bottom = 589.0
+mouse_filter = 2
+texture = ExtResource("2_kvbdh")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("3_cioqv")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="ESCTerrain" type="Node2D" parent="."]
+script = ExtResource("4_dd7rh")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
+navigation_polygon = SubResource("NavigationPolygon_dnays")
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(501, 416)
+script = ExtResource("5_pj8qn")
+global_id = "top_library_start_pos"
+is_start_location = true
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="Exits" type="Node2D" parent="."]
+
+[node name="exit_above_table_r_" type="Area2D" parent="Exits"]
+script = ExtResource("7_dd7rh")
+target_scene = "uid://d3rmihtjyvjv1"
+global_id = "exit_above_table_r_"
+tooltip_name = " above Small Table"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/exit_above_table_r_"]
+polygon = PackedVector2Array(651, 220, 824, 223, 904, 447, 615, 451)
+
+[node name="ESCLocation" type="Marker2D" parent="Exits/exit_above_table_r_"]
+position = Vector2(589, 424)
+script = ExtResource("5_pj8qn")
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="RoomObjects" type="Node2D" parent="."]

@@ -39,25 +39,29 @@ metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 navigation_polygon = SubResource("NavigationPolygon_a733n")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(719, 153)
+position = Vector2(854, 380)
 script = ExtResource("6_ef41m")
 global_id = "under_the_bed_start_pos"
 is_start_location = true
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
-[node name="ESCExit" type="Area2D" parent="."]
+[node name="Exits" type="Node2D" parent="."]
+
+[node name="ESCExit" type="Area2D" parent="Exits"]
 script = ExtResource("7_j3gl6")
-target_scene = "uid://c7qwgpcumyo1k"
-global_id = "exit_whole_room"
+target_scene = "uid://bnsxbh123ncm2"
+global_id = "exit_whole_room_r_"
 tooltip_name = "Bed Room"
 is_exit = true
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ESCExit"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/ESCExit"]
 position = Vector2(4, 2)
 polygon = PackedVector2Array(394, -5, 963, 3, 954, 130, 572, 20)
 
-[node name="ESCLocation" type="Marker2D" parent="ESCExit"]
+[node name="ESCLocation" type="Marker2D" parent="Exits/ESCExit"]
 position = Vector2(757, 124)
 script = ExtResource("6_ef41m")
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="RoomObjects" type="Node2D" parent="."]
