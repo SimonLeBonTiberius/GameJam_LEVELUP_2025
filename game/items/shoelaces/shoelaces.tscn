@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bom5ooe8ehs23"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_ebsrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebsrq"]
+
+[node name="Shoelaces" type="Area2D"]
+process_mode = 1
+script = ExtResource("1_ebsrq")
+global_id = "shoelaces"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ebsrq")

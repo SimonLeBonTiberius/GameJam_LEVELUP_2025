@@ -40,13 +40,6 @@ metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
 navigation_polygon = SubResource("NavigationPolygon_xx5om")
 
-[node name="StartPoint" type="Marker2D" parent="."]
-position = Vector2(606, 409)
-script = ExtResource("4_3j8cy")
-global_id = "above_table_start_pos"
-is_start_location = true
-metadata/_custom_type_script = "uid://beh3ds4eapldu"
-
 [node name="Exits" type="Node2D" parent="."]
 
 [node name="enter_bed_room_r_" type="Area2D" parent="Exits"]
@@ -84,7 +77,7 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 [node name="RoomObjects" type="Node2D" parent="."]
 
 [node name="Fly" parent="RoomObjects" instance=ExtResource("8_74tyq")]
-position = Vector2(547, 197)
+position = Vector2(532, 182)
 esc_script = "res://game/rooms/above_table/scripts/fly.esc"
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Fly"]
@@ -95,4 +88,11 @@ metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 [node name="slide_fly_out_position" type="Marker2D" parent="RoomObjects"]
 position = Vector2(-134, 214)
 script = ExtResource("4_3j8cy")
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(606, 409)
+script = ExtResource("4_3j8cy")
+global_id = "above_table_start_pos"
+is_start_location = true
 metadata/_custom_type_script = "uid://beh3ds4eapldu"

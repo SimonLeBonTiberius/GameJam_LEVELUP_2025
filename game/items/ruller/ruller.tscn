@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b75ij74uuv84e"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_dvht3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn2rb"]
+
+[node name="Ruller" type="Area2D"]
+process_mode = 1
+script = ExtResource("1_dvht3")
+global_id = "ruller"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hn2rb")

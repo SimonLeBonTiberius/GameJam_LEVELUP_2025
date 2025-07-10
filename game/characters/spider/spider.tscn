@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cma6xg6kqtsdi"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_5erqs"]
+[ext_resource type="Script" uid="uid://85bledusisk1" path="res://addons/escoria-core/game/core-scripts/esc_dialog_location.gd" id="2_cjxin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m8o4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjxin"]
+
+[node name="Spider" type="Area2D"]
+process_mode = 1
+script = ExtResource("1_5erqs")
+global_id = "spider"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8m8o4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cjxin")
+
+[node name="ESCDialogLocation" type="Marker2D" parent="."]
+script = ExtResource("2_cjxin")
+metadata/_custom_type_script = "uid://85bledusisk1"
