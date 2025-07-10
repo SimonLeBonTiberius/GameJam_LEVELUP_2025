@@ -1,5 +1,6 @@
 :look
 	say("player", "A ,That's the fly that drive me crazy each time!")
+
 :talk
 	?!
 		- "Hi fly!" 
@@ -9,6 +10,8 @@
 			say("player", "Bye I leave")
 			say("fly", "Stupid Human!", )
 			done
+			
+
 :use "candy"
 	accept_input("SKIP")
 	say("player", "Hey, I got some sugar for you!")
