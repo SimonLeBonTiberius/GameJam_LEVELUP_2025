@@ -185,7 +185,7 @@ boards={
 }],
 &"id": "c50a2db2b5",
 &"label": "Main Board",
-&"scroll_offset": Vector2(-533.921, -208.802),
+&"scroll_offset": Vector2(-707.312, 542.902),
 &"things": [{
 &"id": &"f3595c5182",
 &"position_offset": Vector2(-1620, 100),
@@ -306,7 +306,7 @@ Clay  Near Trash Bin (Seat for the Airplane)",
 &"text": "THE COMPUTE TELL YOU THAT YOU HAVE TO RETHINK THE ORDINARY and make you small like a can of Coke",
 &"type": 3
 }],
-&"zoom": 0.232568
+&"zoom": 0.883177
 }
 }
 minimap_enabled=true

@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://4wxkd0rycjs3"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_7l1j1"]
+[ext_resource type="Texture2D" uid="uid://dlqnm1r5dus0b" path="res://game/characters/fly/img/fly-Sheet.png" id="2_fxmi1"]
+[ext_resource type="Script" uid="uid://85bledusisk1" path="res://addons/escoria-core/game/core-scripts/esc_dialog_location.gd" id="3_2guwl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jr84"]
+atlas = ExtResource("2_fxmi1")
+region = Rect2(0, 0, 38, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw4sw"]
+atlas = ExtResource("2_fxmi1")
+region = Rect2(38, 0, 38, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cg5hy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jr84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw4sw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4y1q3"]
+radius = 32.0
+
+[node name="Fly" type="Area2D"]
+process_mode = 1
+script = ExtResource("1_7l1j1")
+global_id = "fly"
+tooltip_name = "Fly"
+default_action = "look"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.5, -22)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_cg5hy")
+frame_progress = 0.732551
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -24)
+shape = SubResource("CircleShape2D_4y1q3")
+
+[node name="ESCDialogLocation" type="Marker2D" parent="."]
+position = Vector2(0, 29)
+script = ExtResource("3_2guwl")
+metadata/_custom_type_script = "uid://85bledusisk1"

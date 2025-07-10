@@ -34,8 +34,8 @@ script = ExtResource("4_p38wx")
 script = ExtResource("5_p5msq")
 scale_min = 0.2
 scale_max = 0.2
-player_speed_multiplier = 5.0
-player_doubleclick_speed_multiplier = 10.0
+player_speed_multiplier = 2.0
+player_doubleclick_speed_multiplier = 3.0
 
 [node name="_NavigationRegion2D_24591" type="NavigationRegion2D" parent="WalkableArea"]
 position = Vector2(0, 48)
