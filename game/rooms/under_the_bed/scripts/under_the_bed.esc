@@ -1,1 +1,2 @@
 :setup
+	play_snd("res://game/rooms/under_the_bed/music/LittleThings_Gameplay3UnderBed_Loop.mp3", _music)

@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7doqmnwjn3fu"]
+[gd_scene load_steps=10 format=3 uid="uid://b7doqmnwjn3fu"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_wjrlp"]
-[ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_vq04j"]
+[ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_vq04j"]
 [ext_resource type="Texture2D" uid="uid://bo33fm5poxvkn" path="res://game/rooms/under_small_table/img/under_table_L.png" id="3_n0bib"]
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_yhq05"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_ipsqu"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_6qapp"]
+[ext_resource type="Texture2D" uid="uid://c0l3hemkynpli" path="res://game/rooms/under_small_table/img/under_table_scale.png" id="6_n0bib"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_vq04j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjrlp"]
@@ -26,6 +27,11 @@ script = ExtResource("4_yhq05")
 
 [node name="WalkableArea" type="Node2D" parent="."]
 script = ExtResource("5_ipsqu")
+scales = ExtResource("6_n0bib")
+scale_min = 0.2
+scale_max = 0.2
+player_speed_multiplier = 4.0
+player_doubleclick_speed_multiplier = 3.0
 
 [node name="_NavigationRegion2D_52717" type="NavigationRegion2D" parent="WalkableArea"]
 position = Vector2(-11, -16)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://d3rmihtjyvjv1"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_hvm6r"]
-[ext_resource type="PackedScene" uid="uid://bjdcihb3trfs5" path="res://game/characters/player.scn" id="2_qdo4a"]
+[ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_qdo4a"]
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="2_wg8jh"]
 [ext_resource type="Texture2D" uid="uid://df2vbnqhbxeeo" path="res://game/rooms/above_table/img/top_table_L.png" id="2_xx5om"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="3_xx5om"]
@@ -33,8 +33,10 @@ metadata/_custom_type_script = "uid://fnwnfflaoeqp"
 
 [node name="ESCTerrain" type="Node2D" parent="."]
 script = ExtResource("3_xx5om")
-scale_min = 0.5
-scale_max = 0.5
+scale_min = 0.2
+scale_max = 0.2
+player_speed_multiplier = 4.0
+player_doubleclick_speed_multiplier = 3.0
 metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
