@@ -9,7 +9,7 @@
 			say("jhon", "I'm not bizzare!")
 		- "I'd better go"
 			say("jhon", "Bye I leave")
-			say("fly", "Stupid Human!", )
+			say("fly", "Stupid Human!")
 			done
 			
 
