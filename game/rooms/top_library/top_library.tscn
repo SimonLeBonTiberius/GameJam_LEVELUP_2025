@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd85evwjvj4lf"]
+[gd_scene load_steps=12 format=3 uid="uid://cd85evwjvj4lf"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_dnays"]
 [ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_cioqv"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="4_dd7rh"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_pj8qn"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_dd7rh"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="8_dd7rh"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_pj8qn"]
+[ext_resource type="Texture2D" uid="uid://gtedalj282qj" path="res://game/rooms/top_library/img/rubber_plane_L.png" id="10_57aer"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_dnays"]
 vertices = PackedVector2Array(495.602, 362, 636.078, 362, 606.813, 449, 486.07, 377.609, 166.578, 357.328, 248.594, 364.227, 252.5, 422.789, 68.3672, 449, 348.133, 448.672)
@@ -16,6 +19,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(43, 459, 163, 347, 258,
 [node name="TopLibrary" type="Node2D"]
 script = ExtResource("1_dnays")
 global_id = "top_library_room"
+esc_script = "res://game/rooms/top_library/scripts/top_library.esc"
 player_scene = ExtResource("2_cioqv")
 metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
 
@@ -65,3 +69,46 @@ script = ExtResource("5_pj8qn")
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="ramp" type="Area2D" parent="RoomObjects"]
+process_mode = 1
+script = ExtResource("8_dd7rh")
+global_id = "ramp"
+esc_script = "res://game/rooms/top_library/scripts/ramp.esc"
+tooltip_name = "Ramp"
+default_action = "look"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/ramp"]
+polygon = PackedVector2Array(268, 285, 471, 367, 348, 448, 263, 408)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/ramp"]
+position = Vector2(444, 421)
+script = ExtResource("9_pj8qn")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="launchpad" type="Area2D" parent="RoomObjects"]
+process_mode = 1
+script = ExtResource("8_dd7rh")
+global_id = "launchpad"
+esc_script = "res://game/rooms/top_library/scripts/launchpad.esc"
+tooltip_name = "Launchpad"
+default_action = "look"
+combine_when_selected_action_is_in = PackedStringArray()
+inventory_texture = ExtResource("10_57aer")
+inventory_texture_hovered = ExtResource("10_57aer")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="rubber" type="Sprite2D" parent="RoomObjects/launchpad"]
+position = Vector2(362, 343)
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("10_57aer")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/launchpad"]
+polygon = PackedVector2Array(268, 285, 471, 367, 348, 448, 263, 408)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/launchpad"]
+position = Vector2(444, 421)
+script = ExtResource("9_pj8qn")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

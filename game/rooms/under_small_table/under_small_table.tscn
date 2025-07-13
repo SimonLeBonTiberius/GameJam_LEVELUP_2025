@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c0l3hemkynpli" path="res://game/rooms/under_small_table/img/under_table_scale.png" id="6_n0bib"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_vq04j"]
 [ext_resource type="Texture2D" uid="uid://d11nnjph5abnd" path="res://game/rooms/under_small_table/img/under_table_shoelace_positioned.png" id="9_6qapp"]
-[ext_resource type="PackedScene" uid="uid://ii62yf8jgbta" path="res://game/items/inventory/elastic_rubber/elastiRubber.tscn" id="9_yhq05"]
+[ext_resource type="PackedScene" uid="uid://ii62yf8jgbta" path="res://game/items/inventory/elastic_rubber.tscn" id="9_yhq05"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="10_ipsqu"]
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="12_dp2ss"]
 

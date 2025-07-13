@@ -1,0 +1,12 @@
+:setup
+	global launchpad_ready = false
+
+	if ESC_LAST_SCENE == "":
+		inventory_add("elastic_rubber")
+		inventory_add("pen")
+		inventory_add("ruller")
+
+	if !launchpad_ready:
+		set_active("launchpad", false)
+	play_snd("res://game/rooms/top_library/music/LittleThings_Gameplay4OnTheLibrary_Loop.mp3", _music)
+	

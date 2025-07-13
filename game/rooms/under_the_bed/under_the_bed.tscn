@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_n6c7w"]
 [ext_resource type="PackedScene" uid="uid://bom5ooe8ehs23" path="res://game/items/inventory/shoelaces/shoelaces.tscn" id="10_qe3q5"]
 [ext_resource type="PackedScene" uid="uid://cma6xg6kqtsdi" path="res://game/characters/spider/spider.tscn" id="11_ef41m"]
-[ext_resource type="PackedScene" uid="uid://dpl8lhc8qojfi" path="res://game/items/inventory/pen/pen.tscn" id="11_k35cv"]
+[ext_resource type="PackedScene" uid="uid://dpl8lhc8qojfi" path="res://game/items/inventory/pen.tscn" id="11_k35cv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a733n"]
 vertices = PackedVector2Array(275.617, 194.039, 56.2734, 187.828, 207.906, 144.719, 928.109, 137.453, 933.844, 509.852, 662.742, 506.094, 649.609, 474.078, 620.102, 328.563, 541.43, 20.9609, 485.609, 217, 307.82, 15.1172, 351.477, 217)
