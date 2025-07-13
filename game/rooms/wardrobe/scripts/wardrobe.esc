@@ -4,3 +4,4 @@
 	if item_hair_brush_picked:
 		set_active("hair_brush", false)
 	
+	play_snd("res://game/rooms/wardrobe/music/LittleThings_Gameplay2Wardrobe_Loop.mp3", _music)

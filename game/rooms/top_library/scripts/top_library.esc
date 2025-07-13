@@ -8,5 +8,6 @@
 
 	if !launchpad_ready:
 		set_active("launchpad", false)
+
 	play_snd("res://game/rooms/top_library/music/LittleThings_Gameplay4OnTheLibrary_Loop.mp3", _music)
 	

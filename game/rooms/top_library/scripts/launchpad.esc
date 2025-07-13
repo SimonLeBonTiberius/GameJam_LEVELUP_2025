@@ -2,4 +2,4 @@
 	say("player", "That's a ready launchpad!")
 	
 :use "airplain"
-	say("player", "The end!")
+	change_scene("res://game/rooms/end_room/End_Room.tscn")
