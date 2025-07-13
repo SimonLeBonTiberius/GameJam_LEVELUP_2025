@@ -121,6 +121,7 @@ metadata/_custom_type_script = "uid://85bledusisk1"
 
 [node name="tiny_player_start" type="Area2D" parent="."]
 process_mode = 1
+visible = false
 position = Vector2(477, 507)
 script = ExtResource("5_aplf1")
 global_id = "tiny_player_start"
