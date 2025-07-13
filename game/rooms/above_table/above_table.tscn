@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cocds7yg0n2io" path="res://game/rooms/above_table/img/hairbrush2_L.png" id="8_6a4e4"]
 [ext_resource type="PackedScene" uid="uid://4wxkd0rycjs3" path="res://game/characters/fly/fly.tscn" id="8_74tyq"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_276b5"]
-[ext_resource type="PackedScene" uid="uid://b75ij74uuv84e" path="res://game/items/inventory/ruller/ruller.tscn" id="10_um5fh"]
+[ext_resource type="PackedScene" uid="uid://b75ij74uuv84e" path="res://game/items/inventory/ruller.tscn" id="10_um5fh"]
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="12_hu8jf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xx5om"]

@@ -1,0 +1,5 @@
+:look
+	say("player", "That's a ready launchpad!")
+	
+:use "airplain"
+	say("player", "The end!")

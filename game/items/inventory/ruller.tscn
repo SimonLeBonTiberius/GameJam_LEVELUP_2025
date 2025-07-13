@@ -14,7 +14,6 @@ esc_script = "res://game/items/inventory/ruller/ruller.esc"
 tooltip_name = "Ruller"
 combine_when_selected_action_is_in = PackedStringArray("use")
 default_action_inventory = "use"
-use_from_inventory_only = true
 inventory_texture = ExtResource("2_hn2rb")
 inventory_texture_hovered = ExtResource("2_hn2rb")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"

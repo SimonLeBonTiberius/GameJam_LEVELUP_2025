@@ -1,0 +1,9 @@
+:look
+	say("player", "That's my toy car ramp. Haven't used it for a while...")
+	
+:use "elastic_rubber"
+	inventory_remove("elastic_rubber")
+	set_active("ramp", false)
+	set_active("launchpad", true)
+	launchpad_ready = true
+	say("player", "Now I can use it as a launchpad!")
