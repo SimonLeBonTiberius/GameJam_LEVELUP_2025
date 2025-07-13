@@ -1,23 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://sio07lsn4prn"]
+[gd_scene load_steps=5 format=3 uid="uid://sio07lsn4prn"]
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_xpbmn"]
 [ext_resource type="Texture2D" uid="uid://caaagsy873788" path="res://game/items/hair_brush/hairbrush_L.png" id="2_kbmwt"]
+[ext_resource type="Texture2D" uid="uid://crtfxxxcjm6ao" path="res://game/items/hair_brush/hairbrush_s.png" id="2_pqcn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpbmn"]
-size = Vector2(608, 707)
+size = Vector2(110, 144)
 
 [node name="HairBrush" type="Area2D"]
 process_mode = 1
 script = ExtResource("1_xpbmn")
 global_id = "hair_brush"
+esc_script = "res://game/items/hair_brush/hair_brush.esc"
+tooltip_name = "Comb"
 combine_when_selected_action_is_in = PackedStringArray()
-inventory_texture = ExtResource("2_kbmwt")
+inventory_texture = ExtResource("2_pqcn2")
 inventory_texture_hovered = ExtResource("2_kbmwt")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_kbmwt")
+scale = Vector2(1.614, 2)
+texture = ExtResource("2_pqcn2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, 16.5)
+position = Vector2(-2, 6)
 shape = SubResource("RectangleShape2D_xpbmn")

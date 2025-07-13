@@ -6,6 +6,10 @@
 
 :setup
 
+	
+	if item_elastic_rubber_picked:
+		set_active("elastic_rubber", false)
+	
 
 
 # ":ready" runs after any events configured in setup complete. It is used to

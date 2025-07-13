@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3rmihtjyvjv1"]
+[gd_scene load_steps=12 format=3 uid="uid://d3rmihtjyvjv1"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_hvm6r"]
 [ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_qdo4a"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="6_3j8cy"]
 [ext_resource type="PackedScene" uid="uid://4wxkd0rycjs3" path="res://game/characters/fly/fly.tscn" id="8_74tyq"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_276b5"]
+[ext_resource type="PackedScene" uid="uid://b75ij74uuv84e" path="res://game/items/ruller/ruller.tscn" id="10_um5fh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xx5om"]
 vertices = PackedVector2Array(727.883, 273.906, 675.398, 463.922, 80.2188, 458.141, 162.508, 270.039)
@@ -18,6 +19,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(156, 260, 741, 264, 683
 [node name="AboveTable" type="Node2D"]
 script = ExtResource("1_hvm6r")
 global_id = "above_table_room"
+esc_script = "res://game/rooms/above_table/scripts/above_table.esc"
 player_scene = ExtResource("2_qdo4a")
 metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
 
@@ -33,8 +35,8 @@ metadata/_custom_type_script = "uid://fnwnfflaoeqp"
 
 [node name="ESCTerrain" type="Node2D" parent="."]
 script = ExtResource("3_xx5om")
-scale_min = 0.2
-scale_max = 0.2
+scale_min = 0.1
+scale_max = 0.1
 player_speed_multiplier = 4.0
 player_doubleclick_speed_multiplier = 3.0
 metadata/_custom_type_script = "uid://5pbcieq7gpdo"
@@ -44,18 +46,18 @@ navigation_polygon = SubResource("NavigationPolygon_xx5om")
 
 [node name="Exits" type="Node2D" parent="."]
 
-[node name="enter_bed_room_r_" type="Area2D" parent="Exits"]
+[node name="enter_under_small_table_r_" type="Area2D" parent="Exits"]
 script = ExtResource("6_3j8cy")
-target_scene = "uid://bnsxbh123ncm2"
-global_id = "enter_bed_room_r_"
+target_scene = "uid://b7doqmnwjn3fu"
+global_id = "enter_under_small_table_r_"
 tooltip_name = "Bed Room"
 is_exit = true
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/enter_bed_room_r_"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/enter_under_small_table_r_"]
 polygon = PackedVector2Array(682, 464, 710, 369, 892, 377, 956, 382, 959, 538, 682, 536)
 
-[node name="ESCLocation" type="Marker2D" parent="Exits/enter_bed_room_r_"]
+[node name="ESCLocation" type="Marker2D" parent="Exits/enter_under_small_table_r_"]
 position = Vector2(662, 449)
 script = ExtResource("4_3j8cy")
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
@@ -79,18 +81,27 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 [node name="RoomObjects" type="Node2D" parent="."]
 
 [node name="Fly" parent="RoomObjects" instance=ExtResource("8_74tyq")]
-position = Vector2(532, 182)
+position = Vector2(742, 163)
 esc_script = "res://game/rooms/above_table/scripts/fly.esc"
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Fly"]
-position = Vector2(-11, 100)
+position = Vector2(-96, 170)
 script = ExtResource("9_276b5")
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
 [node name="slide_fly_out_position" type="Marker2D" parent="RoomObjects"]
-position = Vector2(-134, 214)
+position = Vector2(-81, 467)
 script = ExtResource("4_3j8cy")
+global_id = "slide_fly_out_position"
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="Ruller" parent="RoomObjects" instance=ExtResource("10_um5fh")]
+position = Vector2(225, 462)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Ruller"]
+position = Vector2(23, -47)
+script = ExtResource("9_276b5")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
 [node name="StartPoint" type="Marker2D" parent="."]
 position = Vector2(606, 409)

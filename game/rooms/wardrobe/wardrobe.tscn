@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2sgqojxeolm5"]
+[gd_scene load_steps=11 format=3 uid="uid://d2sgqojxeolm5"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_6jp2f"]
 [ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_hg5to"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="4_o6dm6"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="5_7uyel"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_o6dm6"]
+[ext_resource type="PackedScene" uid="uid://sio07lsn4prn" path="res://game/items/hair_brush/hair_brush.tscn" id="8_7uyel"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_g4adu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pj7bf"]
 vertices = PackedVector2Array(858.609, 476.258, 80.0469, 482.742, 111.258, 459.992, 832.953, 459)
@@ -16,6 +18,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(108, 450, 836, 449, 891
 [node name="Wardrobe" type="Node2D"]
 script = ExtResource("1_6jp2f")
 global_id = "wardrobe_room"
+esc_script = "res://game/rooms/wardrobe/scripts/wardrobe.esc"
 player_scene = ExtResource("2_hg5to")
 metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
 
@@ -32,8 +35,8 @@ metadata/_custom_type_script = "uid://fnwnfflaoeqp"
 
 [node name="ESCTerrain" type="Node2D" parent="."]
 script = ExtResource("5_o6dm6")
-scale_min = 0.2
-scale_max = 0.2
+scale_min = 0.1
+scale_max = 0.1
 player_speed_multiplier = 4.0
 player_doubleclick_speed_multiplier = 3.0
 metadata/_custom_type_script = "uid://5pbcieq7gpdo"
@@ -42,7 +45,7 @@ metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 navigation_polygon = SubResource("NavigationPolygon_pj7bf")
 
 [node name="StartPoint" type="Marker2D" parent="."]
-position = Vector2(791, 467)
+position = Vector2(123, 465)
 script = ExtResource("4_o6dm6")
 global_id = "wardrobe_start"
 is_start_location = true
@@ -60,8 +63,16 @@ metadata/_custom_type_script = "uid://btt4cprco53ec"
 polygon = PackedVector2Array(18, 527, 65, 491, 897, 484, 947, 529)
 
 [node name="ESCLocation" type="Marker2D" parent="Exits/ESCExit"]
-position = Vector2(469, 476)
+position = Vector2(157, 476)
 script = ExtResource("4_o6dm6")
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="HairBrush" parent="RoomObjects" instance=ExtResource("8_7uyel")]
+position = Vector2(832, 394)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/HairBrush"]
+position = Vector2(-82, 74)
+script = ExtResource("9_g4adu")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

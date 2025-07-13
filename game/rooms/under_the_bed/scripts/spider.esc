@@ -1,0 +1,14 @@
+:look
+	say("player", "A ,That's a Nasty Black Spider, if i get closer it will eat me!")
+	
+:talk
+	?!
+		- "Hi Little spider" 
+			say("player", "Hi spider!")
+			say("spider", "Come closer...")
+			say("player", "Nope!")
+		- "I'd better go"
+			say("player", "Bye I leave")
+			say("spider", "why leave, get closer..")
+			done
+			

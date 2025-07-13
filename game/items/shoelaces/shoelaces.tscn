@@ -1,17 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bom5ooe8ehs23"]
+[gd_scene load_steps=4 format=3 uid="uid://bom5ooe8ehs23"]
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_ebsrq"]
+[ext_resource type="Texture2D" uid="uid://cw7idjnbhovkj" path="res://game/items/shoelaces/shoelaces.png" id="2_f3etr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebsrq"]
+size = Vector2(156, 231)
 
 [node name="Shoelaces" type="Area2D"]
 process_mode = 1
 script = ExtResource("1_ebsrq")
 global_id = "shoelaces"
+esc_script = "res://game/items/shoelaces/shoelaces.esc"
+tooltip_name = "Shoelaces"
 combine_when_selected_action_is_in = PackedStringArray()
+inventory_texture = ExtResource("2_f3etr")
+inventory_texture_hovered = ExtResource("2_f3etr")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, 51)
+scale = Vector2(3, 2.875)
+texture = ExtResource("2_f3etr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 51.5)
 shape = SubResource("RectangleShape2D_ebsrq")

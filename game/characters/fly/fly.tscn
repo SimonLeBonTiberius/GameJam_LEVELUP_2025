@@ -27,14 +27,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4y1q3"]
-radius = 32.0
+radius = 38.5
 
 [node name="Fly" type="Area2D"]
 process_mode = 1
 script = ExtResource("1_7l1j1")
 global_id = "fly"
 tooltip_name = "Fly"
-default_action = "look"
+dialog_color = Color(0.728729, 0.236373, 0.0987364, 1)
 combine_when_selected_action_is_in = PackedStringArray()
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 

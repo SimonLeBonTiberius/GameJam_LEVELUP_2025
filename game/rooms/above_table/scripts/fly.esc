@@ -1,26 +1,29 @@
 :look
-	say("jhon", "A ,That's the fly that drive me crazy each time!")
+	say("player", "A ,That's the fly that drive me crazy each time!")
+	
+:use "candy"
+	accept_input("SKIP")
+	say("player", "Hey, I got some sugar for you!")
+	inventory_remove("candy")
+	say("fly", "Thanks Tiny Human, you are not so useless after all")
+	say("player", "if you want more of it, there is more under the bed!")
+	say("fly", "HA! stupid human,now it is all mine")
+	slide($fly,$slide_fly_out_position)
+	wait(3)
+	set_active("fly", false)
+	say("player", "enjoy your meal ... ahahaha")
+	item_candy_used = true
+	accept_input("ALL")
+	
 
 :talk
 	?!
 		- "Hi fly!" 
-			say("jhon", "Hi fly!")
+			say("player", "Hi fly!")
 			say("fly", "A Tiny Human, Bizzare")
-			say("jhon", "I'm not bizzare!")
+			say("player", "I'm not bizzare!")
 		- "I'd better go"
-			say("jhon", "Bye I leave")
+			say("player", "Bye I leave")
 			say("fly", "Stupid Human!")
 			done
 			
-
-:use "candy"
-	accept_input("SKIP")
-	say("jhon", "Hey, I got some sugar for you!")
-	inventory_remove("candy")
-	say("fly", "Thanks Tiny Human, you are not so useless after all")
-	say("jhon", "if you want more of it, there is more under the bed!")
-	say("fly", "HA! stupid human,now it is all mine")
-	slide("fly","slide_fly_out_position")
-	set_active("fly", false)
-	say("player", "enjoy your meal ... ahahaha")
-	accept_input("ALL")

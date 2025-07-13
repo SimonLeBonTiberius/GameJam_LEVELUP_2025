@@ -1,2 +1,9 @@
 :setup
+	
+	if item_candy_picked:
+		set_active("candy", false)
+	if item_candy_used
+		set_active("spider", false)
+	if item_shoelaces_picked:
+		set_active("shoelaces", false)
 	play_snd("res://game/rooms/under_the_bed/music/LittleThings_Gameplay3UnderBed_Loop.mp3", _music)

@@ -1,0 +1,7 @@
+:setup
+
+	if item_ruller_picked:
+		set_active("ruller", false)
+#check if the fly is dead
+	if item_candy_used:
+		set_active($fly, false)

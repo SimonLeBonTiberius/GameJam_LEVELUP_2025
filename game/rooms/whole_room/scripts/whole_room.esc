@@ -5,8 +5,20 @@
 # sees the room). Reset movable objects to their start positions here.
 
 :setup
+	#[!whole_room_visited]
+	#	#Set all item picked state
+	#	set_global item_ruller_picked = false
+	#	set_global item_elastic_rubber_picked = false
+	#	set_global item_candy_picked = false
+	#	set_global item_shoelaces_picked = false
+	#	
+	#	#Set all item used state
+	#	set_global item_ruller_used = false
+	#	set_global item_elastic_used_picked = false
+	#	set_global item_candy_used = false
+	#	set_global item_shoelaces_used = false
+ 
 	play_snd("res://game/rooms/whole_room/music/LittleThings_Gameplay1_Loop.mp3", _music)
-	# set_player tiny_player
 
 
 # ":ready" runs after any events configured in setup complete. It is used to

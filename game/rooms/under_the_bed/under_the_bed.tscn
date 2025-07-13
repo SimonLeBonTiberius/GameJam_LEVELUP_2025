@@ -1,17 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7qwgpcumyo1k"]
+[gd_scene load_steps=14 format=3 uid="uid://c7qwgpcumyo1k"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_u54lr"]
 [ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_j3gl6"]
-[ext_resource type="Texture2D" uid="uid://b6ipjkf8iu4ws" path="res://game/rooms/under_the_bed/img/under_bed_candy_L.png" id="3_j3gl6"]
+[ext_resource type="Texture2D" uid="uid://cepb8jywy3ouu" path="res://game/rooms/under_the_bed/img/under_bed_candy_no_gum.png" id="3_j3gl6"]
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_n6c7w"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_qe3q5"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_ef41m"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_j3gl6"]
+[ext_resource type="PackedScene" uid="uid://7y68vtefssgu" path="res://game/items/candy/candy.tscn" id="8_i00l7"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_n6c7w"]
+[ext_resource type="PackedScene" uid="uid://bom5ooe8ehs23" path="res://game/items/shoelaces/shoelaces.tscn" id="10_qe3q5"]
+[ext_resource type="PackedScene" uid="uid://cma6xg6kqtsdi" path="res://game/characters/spider/spider.tscn" id="11_ef41m"]
+[ext_resource type="PackedScene" uid="uid://dpl8lhc8qojfi" path="res://game/items/pen/pen.tscn" id="11_k35cv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a733n"]
-vertices = PackedVector2Array(319.141, 182, 257.242, 182, 263.758, 126.547, 309.633, 15.1719, 928.109, 137.453, 933.844, 509.852, 662.742, 506.094, 649.609, 474.078, 620.102, 328.563, 541.43, 20.9609, 485.609, 217, 354.141, 217)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 4, 8, 10, 3), PackedInt32Array(3, 10, 11, 0)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(640, 477, 611, 334, 482, 227, 350, 227, 315, 192, 246, 192, 254, 124, 303, 5, 543, 11, 938, 130, 944, 520, 656, 516)])
+vertices = PackedVector2Array(275.617, 194.039, 56.2734, 187.828, 207.906, 144.719, 928.109, 137.453, 933.844, 509.852, 662.742, 506.094, 649.609, 474.078, 620.102, 328.563, 541.43, 20.9609, 485.609, 217, 307.82, 15.1172, 351.477, 217)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(8, 3, 7, 9, 10), PackedInt32Array(2, 10, 9, 11, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(640, 477, 611, 334, 482, 227, 350, 227, 274, 204, -9, 196, 202, 136, 303, 5, 543, 11, 938, 130, 944, 520, 656, 516)])
 
 [node name="under_the_bed" type="Node2D"]
 script = ExtResource("1_u54lr")
@@ -33,8 +38,8 @@ metadata/_custom_type_script = "uid://fnwnfflaoeqp"
 
 [node name="WalkableArea" type="Node2D" parent="."]
 script = ExtResource("5_qe3q5")
-scale_min = 0.2
-scale_max = 0.2
+scale_min = 0.1
+scale_max = 0.1
 player_speed_multiplier = 5.0
 player_doubleclick_speed_multiplier = 3.0
 metadata/_custom_type_script = "uid://5pbcieq7gpdo"
@@ -69,3 +74,36 @@ script = ExtResource("6_ef41m")
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="Shoelaces" parent="RoomObjects" instance=ExtResource("10_qe3q5")]
+position = Vector2(447, 357)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Shoelaces"]
+position = Vector2(219, 95)
+script = ExtResource("9_n6c7w")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="Candy" parent="RoomObjects" instance=ExtResource("8_i00l7")]
+position = Vector2(879, 430)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Candy"]
+position = Vector2(-51, -1)
+script = ExtResource("9_n6c7w")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="Pen" parent="RoomObjects" instance=ExtResource("11_k35cv")]
+position = Vector2(27, 98)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Pen"]
+position = Vector2(82, 82)
+script = ExtResource("9_n6c7w")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="Spider" parent="RoomObjects" instance=ExtResource("11_ef41m")]
+position = Vector2(157, 96)
+esc_script = "res://game/rooms/under_the_bed/scripts/spider.esc"
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Spider"]
+position = Vector2(173, 68)
+script = ExtResource("9_n6c7w")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

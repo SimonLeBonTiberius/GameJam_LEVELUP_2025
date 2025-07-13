@@ -1,0 +1,4 @@
+:setup
+	if item_hair_brush_picked:
+		set_active("hair_brush", false)
+	

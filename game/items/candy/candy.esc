@@ -1,0 +1,7 @@
+:look
+	say("player", "It is a piece of candy")
+
+:pickup
+	inventory_add("candy")
+	set_active("candy", false)
+	item_candy_picked = true

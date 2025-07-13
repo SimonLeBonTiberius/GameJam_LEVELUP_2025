@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7doqmnwjn3fu"]
+[gd_scene load_steps=13 format=3 uid="uid://b7doqmnwjn3fu"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_wjrlp"]
 [ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_vq04j"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_6qapp"]
 [ext_resource type="Texture2D" uid="uid://c0l3hemkynpli" path="res://game/rooms/under_small_table/img/under_table_scale.png" id="6_n0bib"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_vq04j"]
+[ext_resource type="Texture2D" uid="uid://d11nnjph5abnd" path="res://game/rooms/under_small_table/img/under_table_shoelace_positioned.png" id="9_6qapp"]
+[ext_resource type="PackedScene" uid="uid://ii62yf8jgbta" path="res://game/items/elastic_rubber/elastiRubber.tscn" id="9_yhq05"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="10_ipsqu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjrlp"]
 vertices = PackedVector2Array(845.57, 477.977, 884.82, 508.172, 129.922, 512.813, 178.352, 476.008)
@@ -28,8 +31,8 @@ script = ExtResource("4_yhq05")
 [node name="WalkableArea" type="Node2D" parent="."]
 script = ExtResource("5_ipsqu")
 scales = ExtResource("6_n0bib")
-scale_min = 0.2
-scale_max = 0.2
+scale_min = 0.1
+scale_max = 0.1
 player_speed_multiplier = 4.0
 player_doubleclick_speed_multiplier = 3.0
 
@@ -80,10 +83,17 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 script = ExtResource("7_vq04j")
 target_scene = "uid://d3rmihtjyvjv1"
 global_id = "exit_above_table_l_"
+tooltip_name = "Above Small Table"
 is_exit = true
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
+[node name="Sprite2D" type="Sprite2D" parent="Exits/exit_above_table_l_"]
+position = Vector2(353, -169)
+texture = ExtResource("9_6qapp")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/exit_above_table_l_"]
+position = Vector2(-3.05176e-05, 731.099)
+scale = Vector2(1, 2.42154)
 polygon = PackedVector2Array(255, -468, 258, -331, 434, -332, 430, -472)
 
 [node name="ESCLocation" type="Marker2D" parent="Exits/exit_above_table_l_"]
@@ -91,3 +101,11 @@ script = ExtResource("6_6qapp")
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="ElastiRubber" parent="RoomObjects" instance=ExtResource("9_yhq05")]
+position = Vector2(186, 476)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/ElastiRubber"]
+position = Vector2(53, 0)
+script = ExtResource("10_ipsqu")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

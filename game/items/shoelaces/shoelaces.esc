@@ -1,0 +1,7 @@
+:look
+	say("player", "It is a shoelaces")
+
+:pickup
+	inventory_add("shoelaces")
+	set_active("shoelaces", false)
+	item_shoelaces_picked = true
