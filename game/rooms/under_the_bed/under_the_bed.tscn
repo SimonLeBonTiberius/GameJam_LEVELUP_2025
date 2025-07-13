@@ -62,6 +62,7 @@ target_scene = "uid://bnsxbh123ncm2"
 global_id = "exit_whole_room_r_"
 tooltip_name = "Bed Room"
 is_exit = true
+interaction_angle = 90
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/ESCExit"]
@@ -69,7 +70,7 @@ position = Vector2(4, 2)
 polygon = PackedVector2Array(394, -5, 963, 3, 954, 130, 572, 20)
 
 [node name="ESCLocation" type="Marker2D" parent="Exits/ESCExit"]
-position = Vector2(915, 309)
+position = Vector2(906, 225)
 script = ExtResource("6_ef41m")
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
@@ -77,6 +78,7 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="Shoelaces" parent="RoomObjects" instance=ExtResource("10_qe3q5")]
 position = Vector2(447, 357)
+interaction_angle = 270
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Shoelaces"]
 position = Vector2(219, 95)
@@ -85,6 +87,7 @@ metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
 [node name="Candy" parent="RoomObjects" instance=ExtResource("8_i00l7")]
 position = Vector2(879, 430)
+interaction_angle = 90
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Candy"]
 position = Vector2(-51, -1)
@@ -102,6 +105,7 @@ metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 [node name="Spider" parent="RoomObjects" instance=ExtResource("11_ef41m")]
 position = Vector2(157, 96)
 esc_script = "res://game/rooms/under_the_bed/scripts/spider.esc"
+interaction_angle = 270
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Spider"]
 position = Vector2(173, 68)
