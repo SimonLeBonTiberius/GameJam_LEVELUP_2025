@@ -104,8 +104,9 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="ElastiRubber" parent="RoomObjects" instance=ExtResource("9_yhq05")]
 position = Vector2(186, 476)
+scale = Vector2(6.415, 6.415)
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/ElastiRubber"]
-position = Vector2(53, 0)
+position = Vector2(10.2884, 2.0265)
 script = ExtResource("10_ipsqu")
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"

@@ -1,7 +1,7 @@
 :look
-    say("player", "It is a elastic_rubber")
+	say("player", "It is a elastic_rubber")
 
 :pickup
-    inventory_add("elastic_rubber")
-    set_active("elastic_rubber", false)
-    item_elastic_rubber_picked = true
+	inventory_add("elastic_rubber")
+	set_active("elastic_rubber", false)
+	item_elastic_rubber_picked = true

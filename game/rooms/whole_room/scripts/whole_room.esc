@@ -11,6 +11,7 @@
 	global item_elastic_rubber_picked = false
 	global item_candy_picked = false
 	global item_shoelaces_picked = false
+	global item_hair_brush_picked = false
 	
 	#Set all item used state
 	global item_ruller_used = false
