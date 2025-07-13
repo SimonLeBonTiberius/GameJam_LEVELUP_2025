@@ -13,9 +13,9 @@
 	accept_input("SKIP")
 	inventory_remove("pen")
 	inventory_remove("ruller")
-	say("player", "Hmmm...Let's Combine")
-	say("player", "here...")
-	say("player", "let me lock this...")
+	say($current_player, "Hmmm...Let's Combine")
+	say($current_player, "here...")
+	say($current_player, "let me lock this...")
 	inventory_add("airplain")
 	# Allow player interaction again
 	accept_input("ALL")

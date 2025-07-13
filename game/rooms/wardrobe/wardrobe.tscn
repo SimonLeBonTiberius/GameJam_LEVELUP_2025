@@ -57,6 +57,7 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 script = ExtResource("5_7uyel")
 target_scene = "uid://bnsxbh123ncm2"
 global_id = "exit_wardrobe_r_"
+interaction_angle = 180
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/ESCExit"]
@@ -71,6 +72,7 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="HairBrush" parent="RoomObjects" instance=ExtResource("8_7uyel")]
 position = Vector2(832, 394)
+interaction_angle = 90
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/HairBrush"]
 position = Vector2(-82, 74)

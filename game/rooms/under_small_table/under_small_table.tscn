@@ -58,6 +58,7 @@ script = ExtResource("7_vq04j")
 target_scene = "uid://bnsxbh123ncm2"
 global_id = "exit_bedroom_r_"
 tooltip_name = "Bed Room"
+interaction_angle = 180
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/exit_bedroom_r_"]
@@ -110,6 +111,7 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 [node name="ElastiRubber" parent="RoomObjects" instance=ExtResource("9_yhq05")]
 position = Vector2(186, 476)
 scale = Vector2(6.415, 6.415)
+interaction_angle = 270
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/ElastiRubber"]
 position = Vector2(10.2884, 2.0265)

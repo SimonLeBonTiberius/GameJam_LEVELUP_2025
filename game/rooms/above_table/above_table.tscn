@@ -57,6 +57,7 @@ target_scene = "uid://b7doqmnwjn3fu"
 global_id = "enter_under_small_table_r_"
 tooltip_name = "Bed Room"
 is_exit = true
+interaction_angle = 180
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/enter_under_small_table_r_"]
@@ -107,6 +108,7 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="Ruller" parent="RoomObjects" instance=ExtResource("10_um5fh")]
 position = Vector2(225, 462)
+interaction_angle = 180
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/Ruller"]
 position = Vector2(23, -47)

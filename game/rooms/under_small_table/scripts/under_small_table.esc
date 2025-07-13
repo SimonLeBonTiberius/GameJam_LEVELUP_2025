@@ -6,6 +6,7 @@
 
 :setup
 	global item_elastic_rubber_picked = false
+	global item_shoelaces_used = false
 	
 	if item_elastic_rubber_picked:
 		set_active("elastic_rubber", false)

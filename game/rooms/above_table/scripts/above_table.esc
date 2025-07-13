@@ -1,5 +1,8 @@
 :setup
-
+	global item_ruller_picked = false
+	global item_candy_used = false
+	global item_hair_brush_used = false
+	
 	if item_ruller_picked:
 		set_active("ruller", false)
 #check if the fly is dead

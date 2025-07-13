@@ -1,3 +1,7 @@
+:setup
+	set_active($tiny_player_start, false)
+	play_snd("res://game/rooms/whole_room/music/LittleThings_Gameplay1_Loop.mp3", _music)
+
 :ready
 	accept_input("SKIP")
 	say($player_start, "I am SOOO BORED!")
