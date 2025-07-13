@@ -12,6 +12,7 @@ script = ExtResource("1_xebie")
 global_id = "pen"
 esc_script = "res://game/items/inventory/pen/pen.esc"
 tooltip_name = "Pen"
+default_action = "pickup"
 combine_when_selected_action_is_in = PackedStringArray("use")
 default_action_inventory = "use"
 use_from_inventory_only = true

@@ -35,6 +35,7 @@ script = ExtResource("1_7l1j1")
 global_id = "fly"
 tooltip_name = "Fly"
 dialog_color = Color(0.728729, 0.236373, 0.0987364, 1)
+default_action = "talk"
 combine_when_selected_action_is_in = PackedStringArray()
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 

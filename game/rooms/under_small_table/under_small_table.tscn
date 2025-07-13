@@ -122,6 +122,7 @@ script = ExtResource("12_dp2ss")
 global_id = "ancor_point"
 esc_script = "res://game/rooms/under_small_table/scripts/ancor_point.esc"
 tooltip_name = "Umberella"
+default_action = "look"
 combine_when_selected_action_is_in = PackedStringArray()
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 

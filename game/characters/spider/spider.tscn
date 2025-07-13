@@ -23,6 +23,7 @@ process_mode = 1
 script = ExtResource("1_5erqs")
 global_id = "spider"
 dialog_color = Color(0.882867, 0.0506087, 0.379882, 1)
+default_action = "talk"
 combine_when_selected_action_is_in = PackedStringArray()
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 

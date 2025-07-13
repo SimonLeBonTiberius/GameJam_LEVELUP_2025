@@ -119,6 +119,7 @@ script = ExtResource("12_hu8jf")
 global_id = "ladder_point"
 esc_script = "res://game/rooms/above_table/scripts/ladder_point.esc"
 tooltip_name = "WIFI cable"
+default_action = "look"
 combine_when_selected_action_is_in = PackedStringArray()
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
