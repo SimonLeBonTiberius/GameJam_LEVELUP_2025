@@ -5,3 +5,4 @@
 	inventory_add("candy")
 	set_active("candy", false)
 	item_candy_picked = true
+	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct3ard046tcvp"
-path="res://.godot/imported/pen_s.png-6884cd5eca295aa35527500e59703d07.ctex"
+uid="uid://dsl77l6aafoa3"
+path="res://.godot/imported/rubberband_L.png-2e40c6fb418f5390e7a5f6e270e7bcaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/items/pen/pen_s.png"
-dest_files=["res://.godot/imported/pen_s.png-6884cd5eca295aa35527500e59703d07.ctex"]
+source_file="res://game/items/inventory/elastic_rubber/rubberband_L.png"
+dest_files=["res://.godot/imported/rubberband_L.png-2e40c6fb418f5390e7a5f6e270e7bcaf.ctex"]
 
 [params]
 

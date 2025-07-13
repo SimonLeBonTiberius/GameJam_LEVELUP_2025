@@ -1,0 +1,21 @@
+:look
+	say("player", "It is a pen")
+
+:pickup
+	if  item_candy_used:
+		inventory_add("pen")
+		set_active("pen", false)
+		item_pen_picked = true
+	else: 
+		say("player", "It is too dangerous I cant get close to that big spider!")
+		
+:use "ruller"
+	accept_input("SKIP")
+	inventory_remove("pen")
+	inventory_remove("ruller")
+	say("player", "Hmmm...Let's Combine")
+	say("player", "here...")
+	say("player", "let me lock this...")
+	inventory_add("airplain")
+	# Allow player interaction again
+	accept_input("ALL")

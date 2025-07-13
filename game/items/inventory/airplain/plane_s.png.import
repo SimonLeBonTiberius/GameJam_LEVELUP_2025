@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b48ixaoiq102a"
-path="res://.godot/imported/candy.png-d2c37d588d193a9dc30dedc29c155a84.ctex"
+uid="uid://wxanvo7ige4q"
+path="res://.godot/imported/plane_s.png-354331926965fd06d49324165da13940.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/items/candy/candy.png"
-dest_files=["res://.godot/imported/candy.png-d2c37d588d193a9dc30dedc29c155a84.ctex"]
+source_file="res://game/items/inventory/airplain/plane_s.png"
+dest_files=["res://.godot/imported/plane_s.png-354331926965fd06d49324165da13940.ctex"]
 
 [params]
 

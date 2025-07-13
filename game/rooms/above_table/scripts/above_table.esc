@@ -5,3 +5,11 @@
 #check if the fly is dead
 	if item_candy_used:
 		set_active($fly, false)
+#check if the hair brush is used as a ladder
+
+	if item_hair_brush_used:
+		set_active("enter_top_library_room_l_", true)
+		set_active("ladder_point", false)
+	else:
+		set_active("enter_top_library_room_l_", false)
+		set_active("ladder_point", true)

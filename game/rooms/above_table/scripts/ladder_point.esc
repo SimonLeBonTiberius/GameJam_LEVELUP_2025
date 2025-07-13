@@ -1,0 +1,13 @@
+:look
+	say("player", "The Cabele of WIFI, if only I could reach it, I would be able to climb to the top of the library")
+	
+:use "hair_brush"
+	accept_input("SKIP")
+	say("player", "I can use this Comb a ladder,let's try")
+	inventory_remove("hair_brush")
+	set_active("enter_top_library_room_l_", true)
+	set_active("ladder_point", false)
+	say("player", "It is stable , i can go tto the top of the library now")
+	item_hair_brush_used = true
+	accept_input("ALL")
+	

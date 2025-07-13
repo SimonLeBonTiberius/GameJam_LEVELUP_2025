@@ -1,0 +1,13 @@
+:look
+	say("player", "Maybe I can Use something with that Umberella to get o top of the Table")
+	
+:use "shoelaces"
+	accept_input("SKIP")
+	say("player", "like the Cowboy , HY-YA!")
+	inventory_remove("shoelaces")
+	set_active("exit_above_table_l_", true)
+	set_active("ancor_point", false)
+	say("player", "Now I Can Climb to the top")
+	item_shoelaces_used = true
+	accept_input("ALL")
+	

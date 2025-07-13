@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://sio07lsn4prn"]
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_xpbmn"]
-[ext_resource type="Texture2D" uid="uid://caaagsy873788" path="res://game/items/hair_brush/hairbrush_L.png" id="2_kbmwt"]
-[ext_resource type="Texture2D" uid="uid://crtfxxxcjm6ao" path="res://game/items/hair_brush/hairbrush_s.png" id="2_pqcn2"]
+[ext_resource type="Texture2D" uid="uid://caaagsy873788" path="res://game/items/inventory/hair_brush/hairbrush_L.png" id="2_kbmwt"]
+[ext_resource type="Texture2D" uid="uid://crtfxxxcjm6ao" path="res://game/items/inventory/hair_brush/hairbrush_s.png" id="2_pqcn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpbmn"]
 size = Vector2(110, 144)
@@ -11,10 +11,10 @@ size = Vector2(110, 144)
 process_mode = 1
 script = ExtResource("1_xpbmn")
 global_id = "hair_brush"
-esc_script = "res://game/items/hair_brush/hair_brush.esc"
+esc_script = "res://game/items/inventory/hair_brush/hair_brush.esc"
 tooltip_name = "Comb"
 default_action = "pickup"
-combine_when_selected_action_is_in = PackedStringArray()
+combine_when_selected_action_is_in = PackedStringArray("use")
 default_action_inventory = "use"
 use_from_inventory_only = true
 inventory_texture = ExtResource("2_pqcn2")

@@ -9,7 +9,12 @@
 	
 	if item_elastic_rubber_picked:
 		set_active("elastic_rubber", false)
-	
+	if item_shoelaces_used:
+		set_active("exit_above_table_l_", true)
+		set_active("ancor_point", false)
+	else:
+		set_active("exit_above_table_l_", false)
+		set_active("ancor_point", true)
 
 
 # ":ready" runs after any events configured in setup complete. It is used to

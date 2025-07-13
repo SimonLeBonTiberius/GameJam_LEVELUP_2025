@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crtfxxxcjm6ao"
-path="res://.godot/imported/hairbrush_s.png-1ee42be81a755dc817e99e3fb1581be2.ctex"
+uid="uid://ccuf7srvldu4t"
+path="res://.godot/imported/ruler_s.png-82bb91fcb8cbb04107682315bb06ff78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/items/hair_brush/hairbrush_s.png"
-dest_files=["res://.godot/imported/hairbrush_s.png-1ee42be81a755dc817e99e3fb1581be2.ctex"]
+source_file="res://game/items/inventory/ruller/ruler_s.png"
+dest_files=["res://.godot/imported/ruler_s.png-82bb91fcb8cbb04107682315bb06ff78.ctex"]
 
 [params]
 

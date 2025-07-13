@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bom5ooe8ehs23"]
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_ebsrq"]
-[ext_resource type="Texture2D" uid="uid://cw7idjnbhovkj" path="res://game/items/shoelaces/shoelaces.png" id="2_f3etr"]
+[ext_resource type="Texture2D" uid="uid://cw7idjnbhovkj" path="res://game/items/inventory/shoelaces/shoelaces.png" id="2_f3etr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebsrq"]
 size = Vector2(156, 231)
@@ -10,9 +10,10 @@ size = Vector2(156, 231)
 process_mode = 1
 script = ExtResource("1_ebsrq")
 global_id = "shoelaces"
-esc_script = "res://game/items/shoelaces/shoelaces.esc"
+esc_script = "res://game/items/inventory/shoelaces/shoelaces.esc"
 tooltip_name = "Shoelaces"
-combine_when_selected_action_is_in = PackedStringArray()
+combine_when_selected_action_is_in = PackedStringArray("use")
+use_from_inventory_only = true
 inventory_texture = ExtResource("2_f3etr")
 inventory_texture_hovered = ExtResource("2_f3etr")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"

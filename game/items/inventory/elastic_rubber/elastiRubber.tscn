@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ii62yf8jgbta"]
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_ep2p6"]
-[ext_resource type="Texture2D" uid="uid://dsl77l6aafoa3" path="res://game/items/elastic_rubber/rubberband_L.png" id="2_u014o"]
+[ext_resource type="Texture2D" uid="uid://dsl77l6aafoa3" path="res://game/items/inventory/elastic_rubber/rubberband_L.png" id="2_u014o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep2p6"]
 size = Vector2(16, 13)
@@ -10,10 +10,10 @@ size = Vector2(16, 13)
 process_mode = 1
 script = ExtResource("1_ep2p6")
 global_id = "elastic_rubber"
-esc_script = "res://game/items/elastic_rubber/elastic_rubber.esc"
+esc_script = "res://game/items/inventory/elastic_rubber/elastic_rubber.esc"
 tooltip_name = "Rubber Band"
 default_action = "pickup"
-combine_when_selected_action_is_in = PackedStringArray()
+combine_when_selected_action_is_in = PackedStringArray("use")
 default_action_inventory = "use"
 use_from_inventory_only = true
 inventory_texture = ExtResource("2_u014o")

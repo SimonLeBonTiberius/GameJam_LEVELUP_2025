@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://7y68vtefssgu"]
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_yrs0y"]
-[ext_resource type="Texture2D" uid="uid://b48ixaoiq102a" path="res://game/items/candy/candy.png" id="2_gupct"]
+[ext_resource type="Texture2D" uid="uid://b48ixaoiq102a" path="res://game/items/inventory/candy/candy.png" id="2_gupct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrs0y"]
 size = Vector2(41, 24)
@@ -10,7 +10,7 @@ size = Vector2(41, 24)
 process_mode = 1
 script = ExtResource("1_yrs0y")
 global_id = "candy"
-esc_script = "res://game/items/candy/candy.esc"
+esc_script = "res://game/items/inventory/candy/candy.esc"
 tooltip_name = "Candy"
 combine_when_selected_action_is_in = PackedStringArray("use")
 use_from_inventory_only = true

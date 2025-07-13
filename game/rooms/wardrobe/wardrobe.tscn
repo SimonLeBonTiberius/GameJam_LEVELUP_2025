@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="4_o6dm6"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="5_7uyel"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_o6dm6"]
-[ext_resource type="PackedScene" uid="uid://sio07lsn4prn" path="res://game/items/hair_brush/hair_brush.tscn" id="8_7uyel"]
+[ext_resource type="PackedScene" uid="uid://sio07lsn4prn" path="res://game/items/inventory/hair_brush/hair_brush.tscn" id="8_7uyel"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_g4adu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pj7bf"]

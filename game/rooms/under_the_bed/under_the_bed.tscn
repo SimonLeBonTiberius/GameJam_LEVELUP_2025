@@ -7,11 +7,11 @@
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_qe3q5"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_ef41m"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_j3gl6"]
-[ext_resource type="PackedScene" uid="uid://7y68vtefssgu" path="res://game/items/candy/candy.tscn" id="8_i00l7"]
+[ext_resource type="PackedScene" uid="uid://7y68vtefssgu" path="res://game/items/inventory/candy/candy.tscn" id="8_i00l7"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_n6c7w"]
-[ext_resource type="PackedScene" uid="uid://bom5ooe8ehs23" path="res://game/items/shoelaces/shoelaces.tscn" id="10_qe3q5"]
+[ext_resource type="PackedScene" uid="uid://bom5ooe8ehs23" path="res://game/items/inventory/shoelaces/shoelaces.tscn" id="10_qe3q5"]
 [ext_resource type="PackedScene" uid="uid://cma6xg6kqtsdi" path="res://game/characters/spider/spider.tscn" id="11_ef41m"]
-[ext_resource type="PackedScene" uid="uid://dpl8lhc8qojfi" path="res://game/items/pen/pen.tscn" id="11_k35cv"]
+[ext_resource type="PackedScene" uid="uid://dpl8lhc8qojfi" path="res://game/items/inventory/pen/pen.tscn" id="11_k35cv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a733n"]
 vertices = PackedVector2Array(275.617, 194.039, 56.2734, 187.828, 207.906, 144.719, 928.109, 137.453, 933.844, 509.852, 662.742, 506.094, 649.609, 474.078, 620.102, 328.563, 541.43, 20.9609, 485.609, 217, 307.82, 15.1172, 351.477, 217)
@@ -40,8 +40,8 @@ metadata/_custom_type_script = "uid://fnwnfflaoeqp"
 script = ExtResource("5_qe3q5")
 scale_min = 0.1
 scale_max = 0.1
-player_speed_multiplier = 5.0
-player_doubleclick_speed_multiplier = 3.0
+player_speed_multiplier = 6.0
+player_doubleclick_speed_multiplier = 5.0
 metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea"]
@@ -69,7 +69,7 @@ position = Vector2(4, 2)
 polygon = PackedVector2Array(394, -5, 963, 3, 954, 130, 572, 20)
 
 [node name="ESCLocation" type="Marker2D" parent="Exits/ESCExit"]
-position = Vector2(757, 124)
+position = Vector2(915, 309)
 script = ExtResource("6_ef41m")
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 

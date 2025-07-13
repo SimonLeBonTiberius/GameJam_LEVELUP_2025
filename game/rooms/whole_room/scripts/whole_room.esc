@@ -12,15 +12,21 @@
 	global item_candy_picked = false
 	global item_shoelaces_picked = false
 	global item_hair_brush_picked = false
+	global item_pen_brush_picked = false
 	
 	#Set all item used state
 	global item_ruller_used = false
 	global item_elastic_used_picked = false
 	global item_candy_used = false
 	global item_shoelaces_used = false
-	global whole_room_visited = true
+	global item_hair_brush_used = false
+	global item_pen_used = false
  
 	play_snd("res://game/rooms/whole_room/music/LittleThings_Gameplay1_Loop.mp3", _music)
+	
+
+#testing
+
 
 
 # ":ready" runs after any events configured in setup complete. It is used to
@@ -30,7 +36,7 @@
 
 # :ready
 
-
+	
 
 # Code examples - feel free to delete this section
 #

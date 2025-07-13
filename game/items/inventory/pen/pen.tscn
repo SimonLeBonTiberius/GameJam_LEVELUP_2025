@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpl8lhc8qojfi"]
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_xebie"]
-[ext_resource type="Texture2D" uid="uid://ct3ard046tcvp" path="res://game/items/pen/pen_s.png" id="2_xh2ll"]
+[ext_resource type="Texture2D" uid="uid://ct3ard046tcvp" path="res://game/items/inventory/pen/pen_s.png" id="2_xh2ll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xebie"]
 size = Vector2(90, 113)
@@ -10,9 +10,11 @@ size = Vector2(90, 113)
 process_mode = 1
 script = ExtResource("1_xebie")
 global_id = "pen"
-esc_script = "res://game/items/pen/pen.esc"
+esc_script = "res://game/items/inventory/pen/pen.esc"
 tooltip_name = "Pen"
-combine_when_selected_action_is_in = PackedStringArray()
+combine_when_selected_action_is_in = PackedStringArray("use")
+default_action_inventory = "use"
+use_from_inventory_only = true
 inventory_texture = ExtResource("2_xh2ll")
 inventory_texture_hovered = ExtResource("2_xh2ll")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"

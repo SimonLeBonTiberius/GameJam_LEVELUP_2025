@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3rmihtjyvjv1"]
+[gd_scene load_steps=15 format=3 uid="uid://d3rmihtjyvjv1"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_hvm6r"]
 [ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_qdo4a"]
@@ -7,14 +7,19 @@
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="3_xx5om"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="4_3j8cy"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="6_3j8cy"]
+[ext_resource type="Texture2D" uid="uid://cocds7yg0n2io" path="res://game/rooms/above_table/img/hairbrush2_L.png" id="8_6a4e4"]
 [ext_resource type="PackedScene" uid="uid://4wxkd0rycjs3" path="res://game/characters/fly/fly.tscn" id="8_74tyq"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_276b5"]
-[ext_resource type="PackedScene" uid="uid://b75ij74uuv84e" path="res://game/items/ruller/ruller.tscn" id="10_um5fh"]
+[ext_resource type="PackedScene" uid="uid://b75ij74uuv84e" path="res://game/items/inventory/ruller/ruller.tscn" id="10_um5fh"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="12_hu8jf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xx5om"]
 vertices = PackedVector2Array(727.883, 273.906, 675.398, 463.922, 80.2188, 458.141, 162.508, 270.039)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(156, 260, 741, 264, 683, 474, 65, 468)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lvyp"]
+size = Vector2(218, 143)
 
 [node name="AboveTable" type="Node2D"]
 script = ExtResource("1_hvm6r")
@@ -70,6 +75,11 @@ tooltip_name = "Top Library"
 is_exit = true
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
+[node name="Sprite2D" type="Sprite2D" parent="Exits/enter_top_library_room_l_"]
+position = Vector2(337, 204)
+scale = Vector2(2.16667, 2.01299)
+texture = ExtResource("8_6a4e4")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exits/enter_top_library_room_l_"]
 polygon = PackedVector2Array(253, 255, 249, 28, 460, 31, 453, 264)
 
@@ -102,6 +112,24 @@ position = Vector2(225, 462)
 position = Vector2(23, -47)
 script = ExtResource("9_276b5")
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="LadderPoint" type="Area2D" parent="RoomObjects"]
+process_mode = 1
+script = ExtResource("12_hu8jf")
+global_id = "ladder_point"
+esc_script = "res://game/rooms/above_table/scripts/ladder_point.esc"
+tooltip_name = "WIFI cable"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/LadderPoint"]
+position = Vector2(322, 308)
+script = ExtResource("9_276b5")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/LadderPoint"]
+position = Vector2(349, 96.5)
+shape = SubResource("RectangleShape2D_5lvyp")
 
 [node name="StartPoint" type="Marker2D" parent="."]
 position = Vector2(606, 409)

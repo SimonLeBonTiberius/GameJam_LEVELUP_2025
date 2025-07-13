@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://nnu3r670jdx2"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_xbyeq"]
+[ext_resource type="Texture2D" uid="uid://wxanvo7ige4q" path="res://game/items/inventory/airplain/plane_s.png" id="2_vnu21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3kd3"]
+size = Vector2(53, 43)
+
+[node name="Airplain" type="Area2D"]
+process_mode = 1
+script = ExtResource("1_xbyeq")
+global_id = "airplain"
+combine_when_selected_action_is_in = PackedStringArray("use")
+combine_is_one_way = true
+use_from_inventory_only = true
+inventory_texture = ExtResource("2_vnu21")
+inventory_texture_hovered = ExtResource("2_vnu21")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_q3kd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 3.5)
+scale = Vector2(1.55556, 1.73077)
+texture = ExtResource("2_vnu21")

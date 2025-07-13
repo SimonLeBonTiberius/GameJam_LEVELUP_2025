@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://caaagsy873788"
-path="res://.godot/imported/hairbrush_L.png-7554e17bc8c6bb637f549a2dcbe3e6fb.ctex"
+path="res://.godot/imported/hairbrush_L.png-928f68318686fc5308104cccda4ba33e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/items/hair_brush/hairbrush_L.png"
-dest_files=["res://.godot/imported/hairbrush_L.png-7554e17bc8c6bb637f549a2dcbe3e6fb.ctex"]
+source_file="res://game/items/inventory/hair_brush/hairbrush_L.png"
+dest_files=["res://.godot/imported/hairbrush_L.png-928f68318686fc5308104cccda4ba33e.ctex"]
 
 [params]
 

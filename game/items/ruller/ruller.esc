@@ -1,7 +1,0 @@
-:look
-	say("player", "It is a ruller")
-
-:pickup
-	inventory_add("ruller")
-	set_active("ruller", false)
-	item_ruller_picked = true
