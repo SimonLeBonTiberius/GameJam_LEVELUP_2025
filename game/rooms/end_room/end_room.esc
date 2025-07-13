@@ -20,4 +20,4 @@
 	set_active($end_screen, true)
 	wait(1)
 	transition("from_center", "in")
-	
+	accept_input("ALL")

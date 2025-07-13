@@ -1,0 +1,142 @@
+[gd_scene load_steps=19 format=3 uid="uid://cb2r6viukf61r"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_vcmpv"]
+[ext_resource type="Texture2D" uid="uid://d1ts3p7yhaigx" path="res://game/rooms/whole_room/img/main_room_L.png" id="2_8w6mv"]
+[ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_jw8ds"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_mlnya"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="5_aplf1"]
+[ext_resource type="Texture2D" uid="uid://bs5tk6ujaf1ij" path="res://game/characters/player/img/character_back_idle-Sheet-export.png" id="6_dxv6j"]
+[ext_resource type="Script" uid="uid://85bledusisk1" path="res://addons/escoria-core/game/core-scripts/esc_dialog_location.gd" id="7_ga3yr"]
+[ext_resource type="Texture2D" uid="uid://bpiukra7gfch3" path="res://game/characters/tiny_player/tiny_player.png" id="8_aplf1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vppa"]
+atlas = ExtResource("6_dxv6j")
+region = Rect2(0, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v7l3"]
+atlas = ExtResource("6_dxv6j")
+region = Rect2(460, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjesy"]
+atlas = ExtResource("6_dxv6j")
+region = Rect2(920, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20wh2"]
+atlas = ExtResource("6_dxv6j")
+region = Rect2(1380, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn7p4"]
+atlas = ExtResource("6_dxv6j")
+region = Rect2(1840, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm4ux"]
+atlas = ExtResource("6_dxv6j")
+region = Rect2(2300, 0, 460, 950)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_st1bh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vppa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v7l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjesy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20wh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn7p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm4ux")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pflvd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jw8ds"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aplf1"]
+
+[node name="StartRoom" type="Node2D"]
+script = ExtResource("1_vcmpv")
+global_id = "start_room"
+esc_script = "res://game/rooms/start_room/start_room.esc"
+player_scene = ExtResource("2_jw8ds")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="ESCBackground" type="TextureRect" parent="."]
+offset_right = 968.0
+offset_bottom = 564.0
+mouse_filter = 2
+texture = ExtResource("2_8w6mv")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("3_mlnya")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="player_start" type="Area2D" parent="."]
+process_mode = 1
+position = Vector2(536, 382)
+script = ExtResource("5_aplf1")
+global_id = "player_start"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_start"]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_st1bh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_start"]
+shape = SubResource("RectangleShape2D_pflvd")
+
+[node name="ESCDialogLocation" type="Marker2D" parent="player_start"]
+position = Vector2(1, -120)
+script = ExtResource("7_ga3yr")
+metadata/_custom_type_script = "uid://85bledusisk1"
+
+[node name="computer" type="Area2D" parent="."]
+process_mode = 1
+position = Vector2(479, 337)
+script = ExtResource("5_aplf1")
+global_id = "computer"
+dialog_color = Color(0.743955, 0.792706, 0.397996, 1)
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="computer"]
+shape = SubResource("CircleShape2D_jw8ds")
+
+[node name="ESCDialogLocation" type="Marker2D" parent="computer"]
+position = Vector2(-2, -41)
+script = ExtResource("7_ga3yr")
+metadata/_custom_type_script = "uid://85bledusisk1"
+
+[node name="tiny_player_start" type="Area2D" parent="."]
+process_mode = 1
+position = Vector2(477, 507)
+script = ExtResource("5_aplf1")
+global_id = "tiny_player_start"
+combine_when_selected_action_is_in = PackedStringArray()
+inventory_texture = ExtResource("8_aplf1")
+inventory_texture_hovered = ExtResource("8_aplf1")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="tiny_player_start"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_aplf1")
+
+[node name="ESCDialogLocation" type="Marker2D" parent="tiny_player_start"]
+position = Vector2(0, -21)
+script = ExtResource("7_ga3yr")
+metadata/_custom_type_script = "uid://85bledusisk1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiny_player_start"]
+shape = SubResource("CircleShape2D_aplf1")
