@@ -1,0 +1,23 @@
+
+:ready
+	accept_input("NONE")
+	say($fly_boy, "GERONIMO!")
+	slide($fly_boy,$slide_top_fly_boy_position)
+	wait(0.5)
+	slide($fly_boy,$slide_bottom_fly_boy_position)
+	wait(0.8)
+	set_active($fly_boy, false)
+	set_active($tiny_player_end, true)
+	say($tiny_player_end, "Finaly!, let me fix this mess")
+	say($tiny_player_end, "Command: ...Let me ...back... to my ...normal size!")
+	transition("shards", "out")
+	set_active($tiny_player_end, false)
+	set_active($player_end, true)
+	wait(0.2)
+	transition("shards", "in")
+	say($tiny_player_end, "I HAVE DONE IT! I CAME BACK TO MY SIZE!")
+	transition("from_center", "out")
+	set_active($end_screen, true)
+	wait(1)
+	transition("from_center", "in")
+	

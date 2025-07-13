@@ -1,0 +1,233 @@
+[gd_scene load_steps=30 format=3 uid="uid://derb3vjwna138"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_7t6g0"]
+[ext_resource type="PackedScene" uid="uid://to7jy7utp6qo" path="res://game/characters/player.scn" id="2_a5l6c"]
+[ext_resource type="Texture2D" uid="uid://d1ts3p7yhaigx" path="res://game/rooms/whole_room/img/main_room_L.png" id="2_lqdxh"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_kpc7b"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="4_kpc7b"]
+[ext_resource type="Texture2D" uid="uid://67s5i1ew17ns" path="res://game/rooms/end_room/plane_kid_s.png" id="5_4v6a2"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_jpb2y"]
+[ext_resource type="Script" uid="uid://85bledusisk1" path="res://addons/escoria-core/game/core-scripts/esc_dialog_location.gd" id="7_plxj2"]
+[ext_resource type="Texture2D" uid="uid://bs5tk6ujaf1ij" path="res://game/characters/player/img/character_back_idle-Sheet-export.png" id="8_a5l6c"]
+[ext_resource type="Texture2D" uid="uid://dpy7wbooy6rvx" path="res://game/characters/player/img/character_front_idle-Sheet-export.png" id="10_abw3t"]
+[ext_resource type="Texture2D" uid="uid://dj7sk0fcwvnll" path="res://game/rooms/end_room/END.png" id="11_kcw6l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4v6a2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bruj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abw3t"]
+atlas = ExtResource("8_a5l6c")
+region = Rect2(0, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcw6l"]
+atlas = ExtResource("8_a5l6c")
+region = Rect2(460, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7hxr"]
+atlas = ExtResource("8_a5l6c")
+region = Rect2(920, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg5bo"]
+atlas = ExtResource("8_a5l6c")
+region = Rect2(1380, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmhxy"]
+atlas = ExtResource("8_a5l6c")
+region = Rect2(1840, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybxj4"]
+atlas = ExtResource("8_a5l6c")
+region = Rect2(2300, 0, 460, 950)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ni7q3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abw3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcw6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7hxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg5bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmhxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybxj4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni7q3"]
+atlas = ExtResource("10_abw3t")
+region = Rect2(0, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bruj"]
+atlas = ExtResource("10_abw3t")
+region = Rect2(460, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw4k3"]
+atlas = ExtResource("10_abw3t")
+region = Rect2(920, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wet87"]
+atlas = ExtResource("10_abw3t")
+region = Rect2(1380, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fqxf"]
+atlas = ExtResource("10_abw3t")
+region = Rect2(1840, 0, 460, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wr0o"]
+atlas = ExtResource("10_abw3t")
+region = Rect2(2300, 0, 460, 950)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5a7fl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni7q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bruj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw4k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wet87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fqxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wr0o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abw3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q7hxr"]
+
+[node name="EndRoom" type="Node2D"]
+script = ExtResource("1_7t6g0")
+global_id = "end_room"
+esc_script = "res://game/rooms/end_room/end_room.esc"
+player_scene = ExtResource("2_a5l6c")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="ESCBackground" type="TextureRect" parent="."]
+offset_right = 953.0
+offset_bottom = 535.0
+mouse_filter = 2
+texture = ExtResource("2_lqdxh")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("3_kpc7b")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="fly_boy" type="Area2D" parent="."]
+process_mode = 1
+position = Vector2(732, 230)
+script = ExtResource("4_kpc7b")
+global_id = "fly_boy"
+combine_when_selected_action_is_in = PackedStringArray()
+inventory_texture = ExtResource("5_4v6a2")
+inventory_texture_hovered = ExtResource("5_4v6a2")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="fly_boy"]
+scale = Vector2(0.165625, 0.161111)
+texture = ExtResource("5_4v6a2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fly_boy"]
+shape = SubResource("CircleShape2D_4v6a2")
+
+[node name="ESCDialogLocation" type="Marker2D" parent="fly_boy"]
+script = ExtResource("7_plxj2")
+metadata/_custom_type_script = "uid://85bledusisk1"
+
+[node name="slide_top_fly_boy_position" type="Marker2D" parent="."]
+position = Vector2(591, 200)
+script = ExtResource("6_jpb2y")
+global_id = "slide_top_fly_boy_position"
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="slide_bottom_fly_boy_position" type="Marker2D" parent="."]
+position = Vector2(504, 349)
+script = ExtResource("6_jpb2y")
+global_id = "slide_bottom_fly_boy_position"
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="tiny_player_end" type="Area2D" parent="."]
+process_mode = 1
+visible = false
+position = Vector2(497, 350)
+script = ExtResource("4_kpc7b")
+global_id = "tiny_player_end"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiny_player_end"]
+shape = SubResource("CircleShape2D_2bruj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tiny_player_end"]
+position = Vector2(0, -5)
+scale = Vector2(0.04, 0.029)
+sprite_frames = SubResource("SpriteFrames_ni7q3")
+
+[node name="ESCDialogLocation" type="Marker2D" parent="tiny_player_end"]
+position = Vector2(2, -40)
+script = ExtResource("7_plxj2")
+metadata/_custom_type_script = "uid://85bledusisk1"
+
+[node name="player_end" type="Area2D" parent="."]
+process_mode = 1
+visible = false
+position = Vector2(549, 358)
+script = ExtResource("4_kpc7b")
+global_id = "player_end"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="ESCDialogLocation" type="Marker2D" parent="player_end"]
+position = Vector2(4, -148)
+script = ExtResource("7_plxj2")
+metadata/_custom_type_script = "uid://85bledusisk1"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_end"]
+position = Vector2(2, 11)
+scale = Vector2(0.2, 0.207)
+sprite_frames = SubResource("SpriteFrames_5a7fl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_end"]
+shape = SubResource("CircleShape2D_abw3t")
+
+[node name="ESCItem" type="Area2D" parent="."]
+process_mode = 1
+visible = false
+script = ExtResource("4_kpc7b")
+global_id = "end_screen"
+combine_when_selected_action_is_in = PackedStringArray()
+inventory_texture = ExtResource("11_kcw6l")
+inventory_texture_hovered = ExtResource("11_kcw6l")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="ESCItem"]
+position = Vector2(476, 266)
+scale = Vector2(1.00317, 0.872786)
+texture = ExtResource("11_kcw6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ESCItem"]
+shape = SubResource("CircleShape2D_q7hxr")
