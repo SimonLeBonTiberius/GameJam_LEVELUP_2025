@@ -558,7 +558,8 @@ func perform_inputevent_on_object(
 	var need_combine = _check_item_needs_combine()
 
 	# If the current tool was not set, this is our first item, make it the tool
-	if not current_tool or (current_tool and not need_combine):
+	if escoria.inventory_manager.inventory_has(obj.global_id) and \
+			not current_tool or (current_tool and not need_combine):
 		current_tool = obj
 	# Else, if we have a tool and combination required, this is our second item,
 	# make it the target.
