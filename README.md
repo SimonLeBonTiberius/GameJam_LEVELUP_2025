@@ -21,7 +21,7 @@ A short, poetic journey designed to evoke reflection and emotion.
 
 - **Engine**: Godot Engine (version 4.x)
 - **Language**: GDScript
-- **Audio**: Bfxr, Audacity
+- **Audio**: Reaper
 - **Graphics**: Hand-drawn / pixel-art style (2D)
 
 ---
